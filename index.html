@@ -1,0 +1,1946 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>OMAR GAZ (GATS) — Graphic Designer & Automation Specialist</title>
+  <meta name="description" content="Brutalist editorial portfolio of Omar Gaz (GATS / OMR_DZN) — Graphic Designer & Workflow Automation Specialist crafting high-impact brand identities, logos, thumbnails, and intelligent business automations." />
+
+  <!-- Google Fonts: Anton, Syne, Space Grotesk, JetBrains Mono & Cairo for crisp Bilingual Typography -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Cairo:wght@600;700;900&family=JetBrains+Mono:wght@400;500;700&family=Space+Grotesk:wght@400;500;600;700&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- GSAP & ScrollTrigger (No Three.js / No 3D) -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            gazRed: '#F02B0B',
+            gazIvory: '#F8F5EC',
+            gazBlack: '#171717',
+            gazGray: '#E6E1D6',
+            gazMint: '#6EE7B7',
+            gazYellow: '#E8FF00',
+          },
+          fontFamily: {
+            display: ['"Anton"', '"Cairo"', 'sans-serif'],
+            syne: ['"Syne"', '"Cairo"', 'sans-serif'],
+            sans: ['"Space Grotesk"', '"Cairo"', 'sans-serif'],
+            mono: ['"JetBrains Mono"', 'monospace'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    :root {
+      --gaz-red: #F02B0B;
+      --gaz-ivory: #F8F5EC;
+      --gaz-black: #171717;
+      --gaz-gray: #E6E1D6;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    /* Normal Operating System Mouse Cursor Enforced Everywhere */
+    html, body {
+      cursor: auto;
+      background-color: var(--gaz-ivory);
+      color: var(--gaz-black);
+      font-family: 'Space Grotesk', 'Cairo', sans-serif;
+      overflow-x: hidden;
+    }
+
+    a, button, select, input, textarea, [role="button"] {
+      cursor: pointer;
+    }
+
+    /* Analog Printed-Paper Grain Overlay */
+    .paper-grain {
+      position: fixed;
+      inset: 0;
+      width: 100vw;
+      height: 100vh;
+      pointer-events: none;
+      z-index: 9998;
+      opacity: 0.045;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+    }
+
+    /* Signature Wavy Optical Pattern (Inspired by Omar Gaz Brand Identity) */
+    .gaz-wavy-bg {
+      background-color: #F02B0B;
+      background-image: repeating-radial-gradient(
+        circle at 0% 50%,
+        transparent 0,
+        transparent 28px,
+        rgba(23, 23, 23, 0.12) 28px,
+        rgba(23, 23, 23, 0.12) 56px
+      );
+    }
+
+    /* Brutalist Custom Scrollbar */
+    ::-webkit-scrollbar {
+      width: 10px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #171717;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #F02B0B;
+      border: 2px solid #171717;
+    }
+
+    /* Kinetic Marquee */
+    @keyframes marqueeScroll {
+      0% { transform: translateX(0%); }
+      100% { transform: translateX(-50%); }
+    }
+    @keyframes marqueeScrollRtl {
+      0% { transform: translateX(0%); }
+      100% { transform: translateX(50%); }
+    }
+    .animate-marquee {
+      display: flex;
+      width: max-content;
+      animation: marqueeScroll 26s linear infinite;
+    }
+    [dir="rtl"] .animate-marquee {
+      animation: marqueeScrollRtl 26s linear infinite;
+    }
+    .animate-marquee:hover {
+      animation-play-state: paused;
+    }
+
+    /* Brutalist Hard Shadows & Crisp Hover Elevation */
+    .brutal-shadow {
+      box-shadow: 6px 6px 0px #171717;
+      transition: transform 0.22s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.22s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+    .brutal-shadow:hover {
+      transform: translate(-3px, -3px);
+      box-shadow: 9px 9px 0px #171717;
+    }
+
+    .brutal-shadow-red {
+      box-shadow: 6px 6px 0px #F02B0B;
+      transition: transform 0.22s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.22s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+    .brutal-shadow-red:hover {
+      transform: translate(-3px, -3px);
+      box-shadow: 9px 9px 0px #F02B0B;
+    }
+
+    /* Oversized Condensed Editorial Display */
+    .font-condensed-giant {
+      font-family: 'Anton', 'Cairo', sans-serif;
+      line-height: 0.87;
+      letter-spacing: -0.02em;
+      text-transform: uppercase;
+    }
+    [dir="rtl"] .font-condensed-giant {
+      line-height: 1.06;
+      letter-spacing: 0;
+    }
+
+    /* Clip-Path Reveal Wrapper for Kinetic Typography */
+    .clip-reveal {
+      overflow: hidden;
+      display: inline-block;
+      vertical-align: bottom;
+    }
+
+    /* Animated SVG Dashed Connector for Automation Pipelines */
+    @keyframes dashFlow {
+      to {
+        stroke-dashoffset: -24;
+      }
+    }
+    .flow-line-animated {
+      stroke-dasharray: 6 6;
+      animation: dashFlow 0.75s linear infinite;
+    }
+
+    /* Slow Geometric Stamp Spin */
+    @keyframes spinSlow {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+    .animate-spin-slow {
+      animation: spinSlow 18s linear infinite;
+    }
+
+    /* Reduced Motion Accessibility */
+    @media (prefers-reduced-motion: reduce) {
+      .animate-marquee,
+      .flow-line-animated,
+      .animate-spin-slow {
+        animation: none !important;
+      }
+      * {
+        transition-duration: 0.01ms !important;
+        animation-duration: 0.01ms !important;
+      }
+    }
+
+    /* Custom Range Slider */
+    input[type="range"].gaz-slider {
+      -webkit-appearance: none;
+      appearance: none;
+      background: #171717;
+      height: 4px;
+      outline: none;
+    }
+    input[type="range"].gaz-slider::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      appearance: none;
+      width: 18px;
+      height: 18px;
+      background: #F02B0B;
+      border: 2px solid #171717;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body class="bg-gazIvory text-gazBlack selection:bg-gazRed selection:text-gazIvory">
+
+  <!-- Analog Paper Texture Overlay -->
+  <div class="paper-grain" aria-hidden="true"></div>
+
+  <!-- Toast Notification Banner (No alert() used) -->
+  <div id="toast-notification" role="status" aria-live="polite" class="fixed bottom-6 right-6 z-[9995] translate-y-24 opacity-0 transition-all duration-300 pointer-events-none">
+    <div class="bg-gazBlack text-gazIvory border-2 border-gazRed px-5 py-3.5 brutal-shadow flex items-center gap-3 font-mono text-xs uppercase tracking-wider">
+      <span class="w-2.5 h-2.5 bg-gazRed inline-block animate-pulse"></span>
+      <span id="toast-text">Copied to clipboard</span>
+    </div>
+  </div>
+
+  <!-- ===================================================================== -->
+  <!-- 1. STICKY BRUTALIST EDITORIAL NAVIGATION                              -->
+  <!-- ===================================================================== -->
+  <header class="sticky top-0 z-50 bg-gazIvory/95 backdrop-blur-sm border-b-2 border-gazBlack">
+    <div class="max-w-[1440px] mx-auto px-4 sm:px-8 h-16 sm:h-20 flex items-center justify-between">
+
+      <!-- Brand Identity Stamp -->
+      <a href="#hero" class="group flex items-center gap-3 focus:outline-none">
+        <div class="bg-gazRed text-gazIvory border-2 border-gazBlack px-2.5 py-1 transform -skew-x-6 group-hover:skew-x-0 transition-transform duration-200">
+          <div class="flex gap-1 mb-0.5">
+            <span class="h-[2px] w-4 bg-gazIvory block"></span>
+            <span class="h-[2px] w-2 bg-gazIvory block"></span>
+          </div>
+          <span class="font-display text-lg sm:text-xl tracking-tight leading-none block">OMAR GAZ</span>
+        </div>
+        <div class="hidden md:flex flex-col font-mono text-[10px] leading-tight uppercase tracking-widest text-gazBlack/80">
+          <span class="font-bold text-gazBlack">GATS // OMR_DZN</span>
+          <span data-i18n="nav_role">GRAPHIC DESIGN & AUTOMATIONS</span>
+        </div>
+      </a>
+
+      <!-- Desktop Editorial Index Links -->
+      <nav class="hidden lg:flex items-center gap-7 font-mono text-xs font-bold uppercase tracking-widest" aria-label="Primary Navigation">
+        <a href="#works" class="hover:text-gazRed transition-colors py-1 border-b-2 border-transparent hover:border-gazRed" data-i18n="nav_works">[01] SELECTED WORKS</a>
+        <a href="#about" class="hover:text-gazRed transition-colors py-1 border-b-2 border-transparent hover:border-gazRed" data-i18n="nav_about">[02] STUDIO & AUTOMATION</a>
+        <a href="#playground" class="hover:text-gazRed transition-colors py-1 border-b-2 border-transparent hover:border-gazRed" data-i18n="nav_lab">[03] MOTION & FLOW LAB</a>
+        <a href="#services" class="hover:text-gazRed transition-colors py-1 border-b-2 border-transparent hover:border-gazRed" data-i18n="nav_services">[04] DISCIPLINES</a>
+      </nav>
+
+      <!-- Actions: Bilingual EN/AR Toggle + Direct Hire CTA + Mobile Menu -->
+      <div class="flex items-center gap-2 sm:gap-3">
+        <button id="lang-toggle" type="button" class="font-mono text-xs font-bold uppercase px-3 py-2 border-2 border-gazBlack bg-gazIvory hover:bg-gazBlack hover:text-gazIvory transition-colors flex items-center gap-1.5" aria-label="Switch Language">
+          <i data-lucide="globe" class="w-3.5 h-3.5 text-gazRed"></i>
+          <span id="lang-label">AR / عربي</span>
+        </button>
+
+        <a href="#contact" class="hidden sm:inline-flex items-center gap-2 bg-gazRed text-gazIvory font-mono text-xs font-bold uppercase tracking-wider px-4 py-2.5 border-2 border-gazBlack brutal-shadow hover:bg-gazBlack transition-colors">
+          <span data-i18n="nav_cta">START PROJECT</span>
+          <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
+        </a>
+
+        <button id="mobile-menu-btn" type="button" class="lg:hidden p-2.5 border-2 border-gazBlack bg-gazIvory hover:bg-gazRed hover:text-gazIvory transition-colors" aria-label="Open Navigation Menu">
+          <i data-lucide="menu" class="w-5 h-5"></i>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Navigation Drawer -->
+    <div id="mobile-menu" class="hidden lg:hidden bg-gazBlack text-gazIvory border-t-2 border-gazRed px-6 py-8">
+      <div class="flex flex-col gap-5 font-display text-3xl uppercase tracking-wide">
+        <a href="#works" class="mobile-nav-link hover:text-gazRed transition-colors" data-i18n="nav_works">[01] SELECTED WORKS</a>
+        <a href="#about" class="mobile-nav-link hover:text-gazRed transition-colors" data-i18n="nav_about">[02] STUDIO & AUTOMATION</a>
+        <a href="#playground" class="mobile-nav-link hover:text-gazRed transition-colors" data-i18n="nav_lab">[03] MOTION & FLOW LAB</a>
+        <a href="#services" class="mobile-nav-link hover:text-gazRed transition-colors" data-i18n="nav_services">[04] DISCIPLINES</a>
+        <a href="#contact" class="mobile-nav-link text-gazRed pt-2 border-t border-gazIvory/20" data-i18n="nav_cta">START PROJECT →</a>
+      </div>
+      <div class="mt-6 pt-4 border-t border-gazIvory/20 font-mono text-xs text-gazIvory/70 flex flex-wrap gap-4">
+        <span>TEL: 01154076421</span>
+        <span>IG: @OMR_DZN</span>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- ===================================================================== -->
+    <!-- 2. HERO SECTION: CHOREOGRAPHED 2D KINETIC MOTION & EDITORIAL STAGE    -->
+    <!-- ===================================================================== -->
+    <section id="hero" class="relative min-h-[90vh] flex flex-col justify-between border-b-2 border-gazBlack overflow-hidden bg-gazIvory">
+
+      <!-- Swiss Architectural Grid Lines -->
+      <div class="absolute inset-0 z-0 pointer-events-none grid grid-cols-2 md:grid-cols-4 max-w-[1440px] mx-auto border-x border-gazBlack/10">
+        <div class="border-r border-gazBlack/10 h-full"></div>
+        <div class="border-r border-gazBlack/10 h-full hidden md:block"></div>
+        <div class="border-r border-gazBlack/10 h-full hidden md:block"></div>
+      </div>
+
+      <!-- Kinetic Geometric Background Accents (Pure 2D SVG & CSS Motion) -->
+      <div class="hero-parallax-layer absolute right-[-6%] top-[12%] z-0 pointer-events-none opacity-15 hidden md:block" aria-hidden="true">
+        <svg class="w-[460px] h-[460px] animate-spin-slow" viewBox="0 0 200 200" fill="none">
+          <rect x="20" y="20" width="160" height="160" stroke="#171717" stroke-width="2" stroke-dasharray="8 6"/>
+          <circle cx="100" cy="100" r="78" stroke="#F02B0B" stroke-width="3"/>
+          <polygon points="100,12 188,100 100,188 12,100" stroke="#171717" stroke-width="2"/>
+        </svg>
+      </div>
+
+      <!-- Top Exhibition Metadata Bar -->
+      <div class="relative z-10 max-w-[1440px] w-full mx-auto px-4 sm:px-8 pt-6 sm:pt-10 flex flex-wrap items-center justify-between gap-4">
+        <div class="hero-stagger inline-flex items-center gap-2.5 bg-gazBlack text-gazIvory px-3.5 py-1.5 font-mono text-[11px] uppercase tracking-widest border border-gazBlack">
+          <span class="w-2 h-2 rounded-full bg-gazRed animate-ping"></span>
+          <span data-i18n="hero_badge">GRAPHIC DESIGNER & AUTOMATION SPECIALIST — 2026</span>
+        </div>
+        <div class="hero-stagger font-mono text-xs uppercase tracking-widest bg-gazIvory px-3.5 py-1.5 border-2 border-gazBlack font-bold brutal-shadow">
+          <span>CAIRO / GIZA — WORLDWIDE • @OMR_DZN</span>
+        </div>
+      </div>
+
+      <!-- Centerpiece Oversized Condensed Typography + Kinetic Motion Frame -->
+      <div class="relative z-10 max-w-[1440px] w-full mx-auto px-4 sm:px-8 my-auto py-8">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-end">
+
+          <!-- Giant Stacked Monolith Title -->
+          <div class="lg:col-span-8">
+            <div class="hero-stagger flex flex-wrap items-center gap-2 mb-4">
+              <span class="inline-block bg-gazRed text-gazIvory font-mono text-xs sm:text-sm font-bold uppercase tracking-[0.18em] px-3 py-1 border-2 border-gazBlack transform -rotate-1">
+                GATS // VISUAL IDENTITY
+              </span>
+              <span class="inline-block bg-gazBlack text-gazIvory font-mono text-xs sm:text-sm font-bold uppercase tracking-[0.18em] px-3 py-1 border-2 border-gazBlack transform rotate-1">
+                ⚡ AI & WORKFLOW AUTOMATIONS
+              </span>
+            </div>
+
+            <h1 class="font-condensed-giant text-[22vw] sm:text-[17vw] lg:text-[13rem] text-gazBlack select-none tracking-tight">
+              <span class="clip-reveal block">
+                <span class="hero-word block text-gazBlack">OMAR</span>
+              </span>
+              <span class="clip-reveal block">
+                <span class="hero-word flex items-center gap-3 sm:gap-6 text-gazRed drop-shadow-[5px_5px_0px_#171717]">
+                  <span>GAZ</span>
+                  <!-- Animated Kinetic Lightning Stamp -->
+                  <span class="hero-bolt inline-flex items-center justify-center bg-gazIvory border-4 border-gazBlack p-2 sm:p-3 brutal-shadow transform -rotate-3 hover:rotate-6 transition-transform duration-300">
+                    <svg class="w-[11vw] h-[11vw] sm:w-20 sm:h-20 lg:w-24 lg:h-24 shrink-0" viewBox="0 0 100 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M58 4L12 68H48L38 116L88 50H52L58 4Z" fill="#F02B0B" stroke="#171717" stroke-width="7" stroke-linejoin="round"/>
+                    </svg>
+                  </span>
+                </span>
+              </span>
+            </h1>
+          </div>
+
+          <!-- Editorial Intro & Dual Discipline Card -->
+          <div class="lg:col-span-4 hero-stagger">
+            <div class="bg-gazIvory border-2 border-gazBlack p-6 sm:p-7 brutal-shadow">
+              <div class="flex items-center justify-between border-b-2 border-gazBlack pb-3 mb-4 font-mono text-xs font-bold uppercase">
+                <span>INDEX: 00-STUDIO</span>
+                <span class="text-gazRed flex items-center gap-1.5">
+                  <span class="w-2 h-2 bg-gazRed inline-block animate-pulse"></span>
+                  DESIGN + SYSTEMS
+                </span>
+              </div>
+              <p class="text-base sm:text-lg font-medium leading-snug mb-6 text-gazBlack" data-i18n="hero_desc">
+                Independent Graphic Designer & Automation Specialist crafting high-impact brand identities, razor-sharp logos, high-CTR thumbnails, and intelligent workflow automations that scale creative & business output.
+              </p>
+              <div class="flex flex-wrap items-center gap-3">
+                <a href="#works" class="flex-1 min-w-[170px] inline-flex items-center justify-center gap-2 bg-gazRed text-gazIvory font-mono text-xs sm:text-sm font-bold uppercase tracking-wider px-5 py-4 border-2 border-gazBlack brutal-shadow hover:bg-gazBlack transition-colors">
+                  <span data-i18n="hero_cta">Explore My Work</span>
+                  <i data-lucide="arrow-down-right" class="w-4 h-4"></i>
+                </a>
+                <a href="#playground" class="inline-flex items-center justify-center gap-2 bg-gazIvory text-gazBlack font-mono text-xs font-bold uppercase tracking-wider px-4 py-4 border-2 border-gazBlack hover:bg-gazBlack hover:text-gazIvory transition-colors">
+                  <i data-lucide="workflow" class="w-4 h-4 text-gazRed"></i>
+                  <span>FLOW LAB</span>
+                </a>
+              </div>
+              <div class="mt-4 pt-3 border-t border-gazBlack/20 flex items-center justify-between font-mono text-[11px] text-gazBlack/75">
+                <span data-i18n="hero_sub_tag">BRANDING • THUMBNAILS • N8N / MAKE</span>
+                <span>[OMR_DZN]</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Bottom Kinetic Ticker Strip -->
+      <div class="relative z-10 bg-gazBlack text-gazIvory border-t-2 border-gazBlack py-3.5 overflow-hidden">
+        <div class="animate-marquee font-mono text-xs sm:text-sm font-bold uppercase tracking-[0.2em] flex items-center gap-8">
+          <span class="text-gazRed">⚡ OMAR GAZ (GATS)</span>
+          <span>BRAND IDENTITY SYSTEMS</span>
+          <span class="text-gazRed">✦</span>
+          <span>WORKFLOW & AI AUTOMATIONS</span>
+          <span class="text-gazRed">✦</span>
+          <span>LOGO & MONOGRAM ARCHITECTURE</span>
+          <span class="text-gazRed">✦</span>
+          <span>HIGH-CTR YOUTUBE & SOCIAL DESIGN</span>
+          <span class="text-gazRed">✦</span>
+          <span>CRM & WHATSAPP LEAD BOTS</span>
+          <span class="text-gazRed">⚡ OMAR GAZ (GATS)</span>
+          <span>BRAND IDENTITY SYSTEMS</span>
+          <span class="text-gazRed">✦</span>
+          <span>WORKFLOW & AI AUTOMATIONS</span>
+          <span class="text-gazRed">✦</span>
+          <span>LOGO & MONOGRAM ARCHITECTURE</span>
+          <span class="text-gazRed">✦</span>
+          <span>HIGH-CTR YOUTUBE & SOCIAL DESIGN</span>
+          <span class="text-gazRed">✦</span>
+          <span>CRM & WHATSAPP LEAD BOTS</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================================================================== -->
+    <!-- 3. SELECTED WORKS: GRAPHIC DESIGN & AUTOMATION CASE STUDIES           -->
+    <!-- ===================================================================== -->
+    <section id="works" class="py-20 sm:py-28 border-b-2 border-gazBlack bg-gazIvory">
+      <div class="max-w-[1440px] mx-auto px-4 sm:px-8">
+
+        <!-- Section Header -->
+        <div class="flex flex-col lg:flex-row lg:items-end justify-between gap-8 pb-10 border-b-2 border-gazBlack mb-12">
+          <div>
+            <div class="font-mono text-xs font-bold uppercase tracking-widest text-gazRed mb-2 flex items-center gap-2">
+              <span>[SECTION 01]</span>
+              <span class="h-[2px] w-8 bg-gazRed inline-block"></span>
+              <span data-i18n="works_sub">CURATED DESIGN & AUTOMATION ARCHIVE</span>
+            </div>
+            <h2 class="font-condensed-giant text-6xl sm:text-8xl lg:text-9xl text-gazBlack" data-i18n="works_title">
+              SELECTED WORKS
+            </h2>
+          </div>
+
+          <!-- Interactive Discipline Filters -->
+          <div class="flex flex-wrap gap-2" role="tablist" aria-label="Filter Portfolio Projects">
+            <button type="button" data-filter="all" class="filter-btn active font-mono text-xs font-bold uppercase px-4 py-2.5 border-2 border-gazBlack bg-gazBlack text-gazIvory transition-colors" data-i18n="filter_all">
+              ALL ARCHIVES (10)
+            </button>
+            <button type="button" data-filter="identity" class="filter-btn font-mono text-xs font-bold uppercase px-4 py-2.5 border-2 border-gazBlack bg-gazIvory text-gazBlack hover:bg-gazRed hover:text-gazIvory transition-colors" data-i18n="filter_identity">
+              BRAND IDENTITY
+            </button>
+            <button type="button" data-filter="logo" class="filter-btn font-mono text-xs font-bold uppercase px-4 py-2.5 border-2 border-gazBlack bg-gazIvory text-gazBlack hover:bg-gazRed hover:text-gazIvory transition-colors" data-i18n="filter_logo">
+              LOGO & MONOGRAM
+            </button>
+            <button type="button" data-filter="social" class="filter-btn font-mono text-xs font-bold uppercase px-4 py-2.5 border-2 border-gazBlack bg-gazIvory text-gazBlack hover:bg-gazRed hover:text-gazIvory transition-colors" data-i18n="filter_social">
+              SOCIAL & YOUTUBE
+            </button>
+            <button type="button" data-filter="apparel" class="filter-btn font-mono text-xs font-bold uppercase px-4 py-2.5 border-2 border-gazBlack bg-gazIvory text-gazBlack hover:bg-gazRed hover:text-gazIvory transition-colors" data-i18n="filter_apparel">
+              APPAREL & PRINT
+            </button>
+            <button type="button" data-filter="automation" class="filter-btn font-mono text-xs font-bold uppercase px-4 py-2.5 border-2 border-gazBlack bg-gazIvory text-gazBlack hover:bg-gazRed hover:text-gazIvory transition-colors" data-i18n="filter_automation">
+              ⚡ AUTOMATIONS
+            </button>
+          </div>
+        </div>
+
+        <!-- Asymmetric Brutalist Portfolio Grid -->
+        <div id="projects-grid" class="grid grid-cols-1 md:grid-cols-12 gap-8 lg:gap-10">
+          <!-- Cards dynamically hydrated via JS -->
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ===================================================================== -->
+    <!-- 4. ABOUT SECTION: GRAPHIC DESIGN + AUTOMATION SYNERGY                 -->
+    <!-- ===================================================================== -->
+    <section id="about" class="py-20 sm:py-28 border-b-2 border-gazBlack bg-gazBlack text-gazIvory relative overflow-hidden">
+      <div class="max-w-[1440px] mx-auto px-4 sm:px-8 relative z-10">
+
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+
+          <!-- Left Column: Oversized Manifesto Typography -->
+          <div class="lg:col-span-7 reveal-up">
+            <div class="font-mono text-xs font-bold uppercase tracking-widest text-gazRed mb-4">
+              [SECTION 02 // DUAL EXPERTISE: DESIGN + AUTOMATION]
+            </div>
+            <h2 class="font-condensed-giant text-5xl sm:text-7xl lg:text-8xl leading-none mb-8">
+              <span data-i18n="about_headline_1">BOLD VISUALS.</span>
+              <span class="text-gazRed block" data-i18n="about_headline_2">AUTOMATED SCALE.</span>
+            </h2>
+
+            <div class="space-y-6 text-lg sm:text-xl text-gazIvory/90 leading-relaxed font-normal max-w-2xl">
+              <p data-i18n="about_p1">
+                I am <strong class="text-gazIvory font-bold underline decoration-gazRed decoration-2 underline-offset-4">Omar Gaz (GATS / OMR_DZN)</strong> — a Graphic Designer and Workflow Automation Specialist bridging high-impact visual identity with intelligent operational systems.
+              </p>
+              <p data-i18n="about_p2">
+                On the creative side, I craft unforgettable logos, corporate uniforms, and high-CTR YouTube thumbnails. On the technical side, I engineer automated workflows (n8n, Make, WhatsApp & CRM pipelines, and AI content engines) that eliminate repetitive manual work and accelerate client growth.
+              </p>
+            </div>
+
+            <!-- Dual Pillar Highlights -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-8">
+              <div class="border-2 border-gazIvory/30 p-4 bg-gazIvory/5">
+                <div class="font-mono text-xs font-bold text-gazRed uppercase mb-1">01 // CREATIVE DIRECTION</div>
+                <p class="text-sm text-gazIvory/80" data-i18n="pillar_design">Brutalist typography, brand books, vector monograms, print & viral social media design.</p>
+              </div>
+              <div class="border-2 border-gazRed p-4 bg-gazRed/10">
+                <div class="font-mono text-xs font-bold text-gazRed uppercase mb-1">02 // SMART AUTOMATIONS</div>
+                <p class="text-sm text-gazIvory/80" data-i18n="pillar_auto">Automated lead capture, WhatsApp client onboarding, social publishing & AI workflow pipelines.</p>
+              </div>
+            </div>
+
+            <!-- Key Metrics Grid -->
+            <div class="grid grid-cols-3 gap-4 sm:gap-6 mt-10 pt-8 border-t-2 border-gazIvory/20">
+              <div>
+                <div class="font-display text-4xl sm:text-6xl text-gazRed">140+</div>
+                <div class="font-mono text-[11px] sm:text-xs uppercase tracking-wider text-gazIvory/70 mt-1" data-i18n="stat_1">DESIGN PROJECTS</div>
+              </div>
+              <div>
+                <div class="font-display text-4xl sm:text-6xl text-gazIvory">35+</div>
+                <div class="font-mono text-[11px] sm:text-xs uppercase tracking-wider text-gazIvory/70 mt-1" data-i18n="stat_2">AUTOMATED FLOWS</div>
+              </div>
+              <div>
+                <div class="font-display text-4xl sm:text-6xl text-gazRed">10X</div>
+                <div class="font-mono text-[11px] sm:text-xs uppercase tracking-wider text-gazIvory/70 mt-1" data-i18n="stat_3">WORKFLOW EFFICIENCY</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Column: Designer & Automation Architect Specimen Card -->
+          <div class="lg:col-span-5 reveal-up">
+            <div class="bg-gazIvory text-gazBlack border-2 border-gazRed p-6 sm:p-8 brutal-shadow-red">
+              <div class="flex items-center justify-between border-b-2 border-gazBlack pb-4 mb-6">
+                <span class="font-mono text-xs font-bold uppercase">SPECIMEN // OMR_DZN</span>
+                <span class="bg-gazRed text-gazIvory font-mono text-[10px] font-bold px-2 py-0.5 uppercase">DESIGN + AUTOMATION</span>
+              </div>
+
+              <!-- Signature Geometric Emblem Artwork -->
+              <div class="gaz-wavy-bg border-2 border-gazBlack p-8 mb-6 flex items-center justify-center relative overflow-hidden">
+                <div class="bg-gazIvory border-2 border-gazBlack px-6 py-4 transform -rotate-2 brutal-shadow text-center">
+                  <div class="flex gap-1.5 mb-1">
+                    <span class="h-1 w-8 bg-gazRed"></span>
+                    <span class="h-1 w-3 bg-gazRed"></span>
+                  </div>
+                  <div class="font-display text-5xl sm:text-6xl text-gazRed leading-none tracking-tight">OMAR</div>
+                  <div class="font-display text-5xl sm:text-6xl text-gazBlack leading-none tracking-tight">GAZ⚡</div>
+                </div>
+              </div>
+
+              <!-- Technical Spec Sheet -->
+              <div class="space-y-3 font-mono text-xs">
+                <div class="flex justify-between py-2 border-b border-gazBlack/20">
+                  <span class="text-gazBlack/60 uppercase">MONIKER:</span>
+                  <span class="font-bold">OMAR GAZ / GATS / OMR_DZN</span>
+                </div>
+                <div class="flex justify-between py-2 border-b border-gazBlack/20">
+                  <span class="text-gazBlack/60 uppercase">SPECIALTIES:</span>
+                  <span class="font-bold text-right">GRAPHIC DESIGN & AUTOMATIONS</span>
+                </div>
+                <div class="flex justify-between py-2 border-b border-gazBlack/20">
+                  <span class="text-gazBlack/60 uppercase">DIRECT LINE:</span>
+                  <a href="tel:01154076421" class="font-bold text-gazRed hover:underline">01154076421</a>
+                </div>
+                <div class="flex justify-between py-2">
+                  <span class="text-gazBlack/60 uppercase">EMAIL:</span>
+                  <a href="mailto:omaralamin718@gmail.com" class="font-bold hover:text-gazRed truncate max-w-[200px]">omaralamin718@gmail.com</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================================================================== -->
+    <!-- 5. MOTION & AUTOMATION LAB (REPLACES 3D PLAYGROUND WITH 2D MOTION)    -->
+    <!-- ===================================================================== -->
+    <section id="playground" class="py-20 sm:py-28 border-b-2 border-gazBlack bg-gazGray/50">
+      <div class="max-w-[1440px] mx-auto px-4 sm:px-8">
+
+        <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
+          <div>
+            <div class="font-mono text-xs font-bold uppercase tracking-widest text-gazRed mb-2">
+              [SECTION 03 // INTERACTIVE MOTION & SYSTEMS]
+            </div>
+            <h2 class="font-condensed-giant text-5xl sm:text-7xl lg:text-8xl text-gazBlack" data-i18n="lab_title">
+              MOTION & AUTOMATION LAB
+            </h2>
+          </div>
+          <p class="font-mono text-xs sm:text-sm max-w-md text-gazBlack/80" data-i18n="lab_desc">
+            Simulate live automated client-to-design workflows and choreograph kinetic Swiss typography animations in real time.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+
+          <!-- Left: Interactive Live Automation Pipeline Simulator -->
+          <div class="lg:col-span-7 bg-gazBlack text-gazIvory border-2 border-gazBlack brutal-shadow flex flex-col justify-between">
+            <div class="px-5 py-3.5 border-b-2 border-gazIvory/20 flex items-center justify-between font-mono text-xs">
+              <div class="flex items-center gap-2">
+                <span class="w-3 h-3 rounded-full bg-gazRed inline-block"></span>
+                <span class="w-3 h-3 rounded-full bg-gazIvory inline-block"></span>
+                <span class="w-3 h-3 rounded-full bg-gazMint inline-block"></span>
+                <span class="ml-2 uppercase font-bold">GAZ_AUTOMATION_ENGINE.FLOW</span>
+              </div>
+              <span id="pipeline-status-badge" class="bg-gazRed text-gazIvory px-2 py-0.5 text-[10px] font-bold uppercase">READY</span>
+            </div>
+
+            <!-- Visual Workflow Nodes Stage -->
+            <div class="p-6 sm:p-8 flex-1 flex flex-col justify-center relative overflow-hidden">
+              <!-- Pipeline Selector Tabs -->
+              <div class="flex flex-wrap gap-2 mb-8 font-mono text-[11px] font-bold">
+                <button type="button" data-pipeline="client" class="pipeline-tab bg-gazRed text-gazIvory px-3 py-1.5 border border-gazIvory uppercase">
+                  01. CLIENT ONBOARDING BOT
+                </button>
+                <button type="button" data-pipeline="social" class="pipeline-tab bg-gazBlack text-gazIvory px-3 py-1.5 border border-gazIvory/40 hover:border-gazIvory uppercase">
+                  02. AUTO-CONTENT & THUMBNAIL PIPELINE
+                </button>
+              </div>
+
+              <!-- Animated 3-Node Architecture -->
+              <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 items-center relative">
+                <!-- Node 1: Trigger -->
+                <div id="flow-node-1" class="flow-node bg-gazIvory text-gazBlack border-2 border-gazIvory p-4 transition-all duration-300">
+                  <div class="flex items-center justify-between font-mono text-[10px] font-bold text-gazRed mb-2">
+                    <span>[TRIGGER]</span>
+                    <i data-lucide="zap" class="w-4 h-4"></i>
+                  </div>
+                  <div id="node-1-title" class="font-display text-2xl leading-none mb-1">WHATSAPP BRIEF</div>
+                  <div id="node-1-desc" class="font-mono text-[11px] text-gazBlack/70">Client submits inquiry via 01154076421</div>
+                </div>
+
+                <!-- Node 2: AI / Logic Processor -->
+                <div id="flow-node-2" class="flow-node bg-gazIvory text-gazBlack border-2 border-gazIvory p-4 transition-all duration-300">
+                  <div class="flex items-center justify-between font-mono text-[10px] font-bold text-gazRed mb-2">
+                    <span>[N8N / AI CORE]</span>
+                    <i data-lucide="cpu" class="w-4 h-4"></i>
+                  </div>
+                  <div id="node-2-title" class="font-display text-2xl leading-none mb-1">PARSE & SCOPE</div>
+                  <div id="node-2-desc" class="font-mono text-[11px] text-gazBlack/70">Extracts deliverables, timeline & generates brief</div>
+                </div>
+
+                <!-- Node 3: Automated Output -->
+                <div id="flow-node-3" class="flow-node bg-gazIvory text-gazBlack border-2 border-gazIvory p-4 transition-all duration-300">
+                  <div class="flex items-center justify-between font-mono text-[10px] font-bold text-gazRed mb-2">
+                    <span>[ACTION]</span>
+                    <i data-lucide="check-circle-2" class="w-4 h-4"></i>
+                  </div>
+                  <div id="node-3-title" class="font-display text-2xl leading-none mb-1">CRM + FOLDER READY</div>
+                  <div id="node-3-desc" class="font-mono text-[11px] text-gazBlack/70">Creates Notion task, Drive assets & sends quote</div>
+                </div>
+              </div>
+
+              <!-- Live Execution Console Output -->
+              <div class="mt-6 bg-gazBlack border border-gazIvory/30 p-3.5 font-mono text-xs text-gazMint">
+                <div class="flex items-center justify-between text-[10px] text-gazIvory/50 mb-1">
+                  <span>EXECUTION LOG</span>
+                  <span>LATENCY: 140MS</span>
+                </div>
+                <div id="automation-log-text">> System idle. Click "RUN AUTOMATION PULSE" to simulate workflow execution...</div>
+              </div>
+            </div>
+
+            <!-- Pipeline Controls Bar -->
+            <div class="bg-gazIvory text-gazBlack p-5 border-t-2 border-gazBlack flex flex-col sm:flex-row items-center justify-between gap-4">
+              <div class="font-mono text-xs">
+                <span class="font-bold uppercase block">SAVES ~12 HRS / WEEK</span>
+                <span class="text-gazBlack/70 text-[11px]">Zero manual data entry • Instant client response</span>
+              </div>
+              <button id="run-automation-btn" type="button" class="w-full sm:w-auto font-mono text-xs font-bold uppercase px-6 py-3.5 bg-gazRed text-gazIvory border-2 border-gazBlack brutal-shadow hover:bg-gazBlack transition-colors flex items-center justify-center gap-2">
+                <i data-lucide="play" class="w-4 h-4"></i>
+                <span>RUN AUTOMATION PULSE</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Right: Live Kinetic Typography & Swiss Poster Animator -->
+          <div class="lg:col-span-5 bg-gazIvory border-2 border-gazBlack brutal-shadow flex flex-col justify-between">
+            <div class="px-5 py-3.5 border-b-2 border-gazBlack flex items-center justify-between font-mono text-xs font-bold uppercase">
+              <span>KINETIC POSTER ANIMATOR</span>
+              <span class="text-gazRed">GSAP 2D ENGINE</span>
+            </div>
+
+            <!-- Live Poster Preview Stage -->
+            <div id="poster-stage" class="p-6 sm:p-8 flex-1 flex flex-col justify-between gaz-wavy-bg relative overflow-hidden min-h-[290px]">
+              <div class="flex justify-between items-start font-mono text-[10px] font-bold uppercase text-gazIvory bg-gazBlack px-2.5 py-1 border border-gazIvory w-fit">
+                <span>OMAR GAZ // MOTION SPECIMEN</span>
+              </div>
+
+              <div id="poster-card-box" class="my-6 bg-gazIvory border-2 border-gazBlack p-5 brutal-shadow transform -rotate-1">
+                <div id="poster-live-text" class="font-condensed-giant text-5xl sm:text-6xl text-gazRed break-words leading-none">
+                  GATS STUDIO
+                </div>
+                <div class="font-mono text-xs font-bold uppercase text-gazBlack mt-3 pt-2 border-t-2 border-gazBlack flex justify-between">
+                  <span>DESIGN + AUTOMATION</span>
+                  <span>2026</span>
+                </div>
+              </div>
+
+              <div class="flex justify-between items-center font-mono text-[10px] font-bold text-gazIvory uppercase">
+                <span>#F02B0B / #F8F5EC</span>
+                <span>@OMR_DZN</span>
+              </div>
+            </div>
+
+            <!-- Interactive Motion Controls -->
+            <div class="p-5 border-t-2 border-gazBlack bg-gazIvory space-y-3">
+              <div>
+                <label for="poster-input" class="block font-mono text-[11px] font-bold uppercase mb-1">CUSTOM HEADLINE (EN / AR):</label>
+                <input id="poster-input" type="text" maxlength="24" value="GATS STUDIO" placeholder="Type headline..." class="w-full px-3.5 py-2.5 border-2 border-gazBlack bg-gazIvory font-mono text-sm font-bold focus:outline-none focus:border-gazRed" />
+              </div>
+              <div class="grid grid-cols-3 gap-2">
+                <button type="button" id="motion-slam-btn" class="font-mono text-[11px] font-bold uppercase py-2.5 border-2 border-gazBlack bg-gazRed text-gazIvory hover:bg-gazBlack transition-colors">
+                  ⚡ SLAM
+                </button>
+                <button type="button" id="motion-skew-btn" class="font-mono text-[11px] font-bold uppercase py-2.5 border-2 border-gazBlack bg-gazIvory hover:bg-gazBlack hover:text-gazIvory transition-colors">
+                  KINETIC SKEW
+                </button>
+                <button type="button" id="poster-preset-btn" class="font-mono text-[11px] font-bold uppercase py-2.5 border-2 border-gazBlack bg-gazIvory hover:bg-gazBlack hover:text-gazIvory transition-colors">
+                  عربي PRESET
+                </button>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================================================================== -->
+    <!-- 6. SERVICES: GRAPHIC DESIGN & WORKFLOW AUTOMATION DISCIPLINES         -->
+    <!-- ===================================================================== -->
+    <section id="services" class="py-20 sm:py-28 border-b-2 border-gazBlack bg-gazIvory">
+      <div class="max-w-[1440px] mx-auto px-4 sm:px-8">
+
+        <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-14">
+          <div>
+            <div class="font-mono text-xs font-bold uppercase tracking-widest text-gazRed mb-2">
+              [SECTION 04 // CAPABILITIES]
+            </div>
+            <h2 class="font-condensed-giant text-5xl sm:text-7xl lg:text-8xl text-gazBlack" data-i18n="services_title">
+              DESIGN & AUTOMATION SERVICES
+            </h2>
+          </div>
+          <p class="font-mono text-xs sm:text-sm max-w-md text-gazBlack/80" data-i18n="services_desc">
+            Comprehensive visual branding paired with smart operational automations for creators, startups, and enterprises.
+          </p>
+        </div>
+
+        <!-- Swiss Editorial Index Rows -->
+        <div class="border-t-2 border-gazBlack divide-y-2 border-gazBlack" id="services-list">
+
+          <!-- Service 01 -->
+          <div class="service-row group py-6 sm:py-8 px-2 sm:px-4 hover:bg-gazBlack hover:text-gazIvory transition-colors">
+            <div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
+              <div class="flex items-baseline gap-4 sm:gap-8">
+                <span class="font-mono text-sm sm:text-base font-bold text-gazRed">01/</span>
+                <h3 class="font-condensed-giant text-3xl sm:text-5xl lg:text-6xl tracking-tight" data-i18n="srv_1_title">BRAND IDENTITY SYSTEMS</h3>
+              </div>
+              <div class="flex items-center gap-4 justify-between md:justify-end">
+                <span class="font-mono text-xs uppercase tracking-wider opacity-75" data-i18n="srv_1_tag">GUIDELINES • TYPOGRAPHY • COLOR ARCHITECTURE</span>
+                <a href="#contact" class="w-10 h-10 border-2 border-current flex items-center justify-center group-hover:bg-gazRed group-hover:border-gazRed group-hover:text-gazIvory transition-colors" aria-label="Inquire about Brand Identity">
+                  <i data-lucide="arrow-up-right" class="w-5 h-5"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Service 02: Highlighted Automation Service -->
+          <div class="service-row group py-6 sm:py-8 px-2 sm:px-4 bg-gazRed/10 hover:bg-gazRed hover:text-gazIvory transition-colors">
+            <div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
+              <div class="flex items-baseline gap-4 sm:gap-8">
+                <span class="font-mono text-sm sm:text-base font-bold text-gazRed group-hover:text-gazBlack">02/</span>
+                <h3 class="font-condensed-giant text-3xl sm:text-5xl lg:text-6xl tracking-tight" data-i18n="srv_2_title">⚡ WORKFLOW & AI AUTOMATIONS</h3>
+              </div>
+              <div class="flex items-center gap-4 justify-between md:justify-end">
+                <span class="font-mono text-xs uppercase tracking-wider opacity-90" data-i18n="srv_2_tag">N8N • MAKE • WHATSAPP & CRM BOTS • CONTENT PIPELINES</span>
+                <a href="#contact" class="w-10 h-10 border-2 border-current flex items-center justify-center group-hover:bg-gazBlack group-hover:border-gazBlack group-hover:text-gazIvory transition-colors" aria-label="Inquire about Automations">
+                  <i data-lucide="arrow-up-right" class="w-5 h-5"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Service 03 -->
+          <div class="service-row group py-6 sm:py-8 px-2 sm:px-4 hover:bg-gazBlack hover:text-gazIvory transition-colors">
+            <div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
+              <div class="flex items-baseline gap-4 sm:gap-8">
+                <span class="font-mono text-sm sm:text-base font-bold text-gazRed">03/</span>
+                <h3 class="font-condensed-giant text-3xl sm:text-5xl lg:text-6xl tracking-tight" data-i18n="srv_3_title">LOGO & MONOGRAM DESIGN</h3>
+              </div>
+              <div class="flex items-center gap-4 justify-between md:justify-end">
+                <span class="font-mono text-xs uppercase tracking-wider opacity-75" data-i18n="srv_3_tag">CUSTOM WORDMARKS • ESPORTS CRESTS • BADGES</span>
+                <a href="#contact" class="w-10 h-10 border-2 border-current flex items-center justify-center group-hover:bg-gazRed group-hover:border-gazRed group-hover:text-gazIvory transition-colors" aria-label="Inquire about Logo Design">
+                  <i data-lucide="arrow-up-right" class="w-5 h-5"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Service 04 -->
+          <div class="service-row group py-6 sm:py-8 px-2 sm:px-4 hover:bg-gazBlack hover:text-gazIvory transition-colors">
+            <div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
+              <div class="flex items-baseline gap-4 sm:gap-8">
+                <span class="font-mono text-sm sm:text-base font-bold text-gazRed">04/</span>
+                <h3 class="font-condensed-giant text-3xl sm:text-5xl lg:text-6xl tracking-tight" data-i18n="srv_4_title">HIGH-CTR YOUTUBE & SOCIAL MEDIA</h3>
+              </div>
+              <div class="flex items-center gap-4 justify-between md:justify-end">
+                <span class="font-mono text-xs uppercase tracking-wider opacity-75" data-i18n="srv_4_tag">VIRAL THUMBNAILS • CAMPAIGN KEY VISUALS</span>
+                <a href="#contact" class="w-10 h-10 border-2 border-current flex items-center justify-center group-hover:bg-gazRed group-hover:border-gazRed group-hover:text-gazIvory transition-colors" aria-label="Inquire about YouTube & Social Design">
+                  <i data-lucide="arrow-up-right" class="w-5 h-5"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Service 05 -->
+          <div class="service-row group py-6 sm:py-8 px-2 sm:px-4 hover:bg-gazBlack hover:text-gazIvory transition-colors">
+            <div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
+              <div class="flex items-baseline gap-4 sm:gap-8">
+                <span class="font-mono text-sm sm:text-base font-bold text-gazRed">05/</span>
+                <h3 class="font-condensed-giant text-3xl sm:text-5xl lg:text-6xl tracking-tight" data-i18n="srv_5_title">PACKAGING, PRINT & APPAREL</h3>
+              </div>
+              <div class="flex items-center gap-4 justify-between md:justify-end">
+                <span class="font-mono text-xs uppercase tracking-wider opacity-75" data-i18n="srv_5_tag">UNIFORMS • STATIONERY • QR BUSINESS CARDS</span>
+                <a href="#contact" class="w-10 h-10 border-2 border-current flex items-center justify-center group-hover:bg-gazRed group-hover:border-gazRed group-hover:text-gazIvory transition-colors" aria-label="Inquire about Apparel & Print">
+                  <i data-lucide="arrow-up-right" class="w-5 h-5"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================================================================== -->
+    <!-- 7. CONTACT SECTION: BOLD CLOSING POSTER & DIRECT CHANNELS             -->
+    <!-- ===================================================================== -->
+    <section id="contact" class="py-20 sm:py-28 bg-gazRed text-gazIvory relative overflow-hidden">
+      <div class="max-w-[1440px] mx-auto px-4 sm:px-8 relative z-10">
+
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+
+          <!-- Left: Massive Closing Statement + Direct Contact Cards -->
+          <div class="lg:col-span-7">
+            <div class="inline-block bg-gazBlack text-gazIvory font-mono text-xs font-bold uppercase tracking-widest px-3 py-1.5 mb-6 border border-gazIvory">
+              <span>[SECTION 05 // INITIATE COLLABORATION]</span>
+            </div>
+
+            <h2 class="font-condensed-giant text-6xl sm:text-8xl lg:text-[7.5rem] text-gazIvory drop-shadow-[5px_5px_0px_#171717] mb-8" data-i18n="contact_title">
+              LET'S WORK TOGETHER.
+            </h2>
+
+            <p class="text-lg sm:text-xl font-medium text-gazIvory/95 max-w-xl mb-10 leading-relaxed" data-i18n="contact_desc">
+              Ready to elevate your brand identity, launch a standout logo, or automate your business workflows? Reach out directly to Omar Gaz via WhatsApp, phone, or email.
+            </p>
+
+            <!-- Direct Contact Cards -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+
+              <!-- Phone / WhatsApp Card -->
+              <div class="bg-gazIvory text-gazBlack border-2 border-gazBlack p-5 brutal-shadow">
+                <div class="flex items-center justify-between font-mono text-xs font-bold uppercase text-gazRed mb-2">
+                  <span>PHONE / WHATSAPP</span>
+                  <i data-lucide="phone-call" class="w-4 h-4"></i>
+                </div>
+                <a href="https://wa.me/201154076421" target="_blank" rel="noopener noreferrer" class="font-display text-3xl sm:text-4xl tracking-tight text-gazBlack hover:text-gazRed transition-colors block mb-3" dir="ltr">
+                  01154076421
+                </a>
+                <div class="flex items-center gap-2 pt-2 border-t border-gazBlack/15">
+                  <a href="https://wa.me/201154076421" target="_blank" rel="noopener noreferrer" class="flex-1 text-center bg-gazBlack text-gazIvory font-mono text-[11px] font-bold uppercase py-2 hover:bg-gazRed transition-colors">
+                    WHATSAPP CHAT
+                  </a>
+                  <button type="button" onclick="copyToClipboard('01154076421', 'Phone number 01154076421 copied!')" class="px-3 py-2 border border-gazBlack font-mono text-[11px] font-bold uppercase hover:bg-gazGray transition-colors" title="Copy Number">
+                    COPY
+                  </button>
+                </div>
+              </div>
+
+              <!-- Email Card -->
+              <div class="bg-gazIvory text-gazBlack border-2 border-gazBlack p-5 brutal-shadow">
+                <div class="flex items-center justify-between font-mono text-xs font-bold uppercase text-gazRed mb-2">
+                  <span>DIRECT EMAIL</span>
+                  <i data-lucide="mail" class="w-4 h-4"></i>
+                </div>
+                <a href="mailto:omaralamin718@gmail.com" class="font-mono text-sm sm:text-base font-bold text-gazBlack hover:text-gazRed transition-colors break-all block mb-4" dir="ltr">
+                  omaralamin718@gmail.com
+                </a>
+                <div class="flex items-center gap-2 pt-2 border-t border-gazBlack/15">
+                  <a href="mailto:omaralamin718@gmail.com?subject=Project%20Inquiry%20—%20OMAR%20GAZ" class="flex-1 text-center bg-gazBlack text-gazIvory font-mono text-[11px] font-bold uppercase py-2 hover:bg-gazRed transition-colors">
+                    SEND EMAIL
+                  </a>
+                  <button type="button" onclick="copyToClipboard('omaralamin718@gmail.com', 'Email omaralamin718@gmail.com copied!')" class="px-3 py-2 border border-gazBlack font-mono text-[11px] font-bold uppercase hover:bg-gazGray transition-colors" title="Copy Email">
+                    COPY
+                  </button>
+                </div>
+              </div>
+
+            </div>
+
+            <!-- Social Handles Strip -->
+            <div class="mt-8 flex flex-wrap items-center gap-4 font-mono text-xs font-bold uppercase">
+              <span class="bg-gazBlack text-gazIvory px-3 py-2 border border-gazBlack">INSTAGRAM: @OMR_DZN</span>
+              <span class="bg-gazBlack text-gazIvory px-3 py-2 border border-gazBlack">STUDIO: OMAR GAZ (GATS)</span>
+              <span class="bg-gazIvory text-gazBlack px-3 py-2 border-2 border-gazBlack">DESIGN + AUTOMATIONS</span>
+            </div>
+          </div>
+
+          <!-- Right: Interactive Project Brief Form -->
+          <div class="lg:col-span-5">
+            <div class="bg-gazIvory text-gazBlack border-2 border-gazBlack p-6 sm:p-8 brutal-shadow">
+              <div class="flex items-center justify-between border-b-2 border-gazBlack pb-4 mb-6">
+                <h3 class="font-condensed-giant text-3xl sm:text-4xl text-gazBlack" data-i18n="form_title">PROJECT BRIEF</h3>
+                <span class="font-mono text-xs font-bold text-gazRed">FAST RESPONSE</span>
+              </div>
+
+              <form id="contact-form" class="space-y-4">
+                <div>
+                  <label for="client-name" class="block font-mono text-xs font-bold uppercase mb-1.5" data-i18n="form_name">YOUR NAME / BRAND *</label>
+                  <input id="client-name" type="text" required placeholder="e.g. Kareem / Nova Studio" class="w-full px-4 py-3 border-2 border-gazBlack bg-gazIvory font-sans text-sm font-medium focus:outline-none focus:border-gazRed" />
+                </div>
+
+                <div>
+                  <label for="client-contact" class="block font-mono text-xs font-bold uppercase mb-1.5" data-i18n="form_contact">YOUR EMAIL OR WHATSAPP *</label>
+                  <input id="client-contact" type="text" required placeholder="e.g. +20 100 000 0000 or email@domain.com" class="w-full px-4 py-3 border-2 border-gazBlack bg-gazIvory font-sans text-sm font-medium focus:outline-none focus:border-gazRed" />
+                </div>
+
+                <div>
+                  <label for="client-service" class="block font-mono text-xs font-bold uppercase mb-1.5" data-i18n="form_service">DISCIPLINE NEEDED</label>
+                  <select id="client-service" class="w-full px-4 py-3 border-2 border-gazBlack bg-gazIvory font-mono text-xs font-bold uppercase focus:outline-none focus:border-gazRed">
+                    <option value="Brand Identity System">01. Brand Identity System</option>
+                    <option value="Workflow & AI Automation">02. Workflow & AI Automation (n8n / Make / Bots)</option>
+                    <option value="Logo & Monogram Design">03. Logo & Monogram Design</option>
+                    <option value="YouTube Thumbnails & Social Media">04. YouTube Thumbnails & Social Media</option>
+                    <option value="Apparel, Packaging & Print">05. Apparel, Packaging & Print</option>
+                    <option value="Full Brand + Automation Package">06. Full Design + Automation Package</option>
+                  </select>
+                </div>
+
+                <div>
+                  <label for="client-brief" class="block font-mono text-xs font-bold uppercase mb-1.5" data-i18n="form_brief">PROJECT DETAILS *</label>
+                  <textarea id="client-brief" rows="3" required placeholder="Tell Omar Gaz about your design or automation goals..." class="w-full px-4 py-3 border-2 border-gazBlack bg-gazIvory font-sans text-sm font-medium focus:outline-none focus:border-gazRed"></textarea>
+                </div>
+
+                <button type="submit" class="w-full bg-gazRed text-gazIvory font-mono text-sm font-bold uppercase tracking-wider py-4 border-2 border-gazBlack brutal-shadow hover:bg-gazBlack transition-colors flex items-center justify-center gap-2">
+                  <span data-i18n="form_submit">DISPATCH BRIEF TO OMAR GAZ</span>
+                  <i data-lucide="send" class="w-4 h-4"></i>
+                </button>
+              </form>
+
+              <!-- Form Confirmation State -->
+              <div id="form-success" class="hidden py-8 text-center space-y-4">
+                <div class="w-14 h-14 bg-gazRed text-gazIvory border-2 border-gazBlack mx-auto flex items-center justify-center brutal-shadow">
+                  <i data-lucide="check" class="w-8 h-8"></i>
+                </div>
+                <h4 class="font-condensed-giant text-4xl text-gazBlack">BRIEF LOGGED!</h4>
+                <p class="font-sans text-sm text-gazBlack/80">
+                  Thank you! Launch your pre-filled WhatsApp message directly to Omar Gaz at <strong>01154076421</strong>.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-3 pt-2">
+                  <a id="wa-direct-launch" href="https://wa.me/201154076421" target="_blank" rel="noopener noreferrer" class="flex-1 bg-gazBlack text-gazIvory font-mono text-xs font-bold uppercase py-3 border-2 border-gazBlack hover:bg-gazRed transition-colors">
+                    OPEN IN WHATSAPP →
+                  </a>
+                  <button type="button" id="reset-form-btn" class="px-4 py-3 border-2 border-gazBlack font-mono text-xs font-bold uppercase hover:bg-gazGray">
+                    NEW BRIEF
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===================================================================== -->
+  <!-- EDITORIAL FOOTER                                                      -->
+  <!-- ===================================================================== -->
+  <footer class="bg-gazBlack text-gazIvory border-t-2 border-gazBlack py-10">
+    <div class="max-w-[1440px] mx-auto px-4 sm:px-8 flex flex-col sm:flex-row items-center justify-between gap-6">
+      <div class="flex items-center gap-4">
+        <span class="font-display text-3xl text-gazRed tracking-tight">OMAR GAZ ⚡</span>
+        <span class="font-mono text-xs text-gazIvory/60 uppercase">© 2026 GATS / OMR_DZN — GRAPHIC DESIGN & AUTOMATIONS.</span>
+      </div>
+      <div class="flex items-center gap-6 font-mono text-xs uppercase">
+        <a href="tel:01154076421" class="hover:text-gazRed transition-colors">01154076421</a>
+        <a href="mailto:omaralamin718@gmail.com" class="hover:text-gazRed transition-colors">omaralamin718@gmail.com</a>
+        <a href="#hero" class="bg-gazIvory text-gazBlack px-3 py-1.5 font-bold hover:bg-gazRed hover:text-gazIvory transition-colors">TOP ↑</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ===================================================================== -->
+  <!-- FULL-SCREEN CASE STUDY EXHIBITION MODAL                               -->
+  <!-- ===================================================================== -->
+  <div id="case-study-modal" role="dialog" aria-modal="true" aria-labelledby="modal-project-title" class="fixed inset-0 z-[100] hidden bg-gazBlack/85 backdrop-blur-sm overflow-y-auto p-3 sm:p-6 md:p-10">
+    <div class="max-w-5xl mx-auto bg-gazIvory text-gazBlack border-2 border-gazBlack brutal-shadow-red my-4 overflow-hidden">
+
+      <!-- Modal Top Sticky Header -->
+      <div class="bg-gazBlack text-gazIvory px-5 sm:px-8 py-4 flex items-center justify-between border-b-2 border-gazBlack">
+        <div class="flex items-center gap-3 font-mono text-xs uppercase">
+          <span id="modal-index" class="bg-gazRed text-gazIvory px-2 py-0.5 font-bold">CASE 01</span>
+          <span id="modal-category" class="text-gazIvory/80">BRAND IDENTITY</span>
+        </div>
+        <button id="close-modal-btn" type="button" class="bg-gazIvory text-gazBlack hover:bg-gazRed hover:text-gazIvory font-mono text-xs font-bold uppercase px-3.5 py-1.5 border border-gazBlack transition-colors flex items-center gap-1.5">
+          <span>CLOSE [ESC]</span>
+          <i data-lucide="x" class="w-4 h-4"></i>
+        </button>
+      </div>
+
+      <!-- Modal Content Body -->
+      <div class="p-6 sm:p-10 space-y-8">
+        <div>
+          <h3 id="modal-project-title" class="font-condensed-giant text-4xl sm:text-6xl lg:text-7xl text-gazBlack mb-3">
+            PROJECT TITLE
+          </h3>
+          <p id="modal-subtitle" class="font-mono text-xs sm:text-sm uppercase text-gazRed font-bold">
+            CLIENT & YEAR SPECIFICATION
+          </p>
+        </div>
+
+        <!-- High-Craft Artwork / Workflow Showcase Container -->
+        <div id="modal-artwork-stage" class="w-full border-2 border-gazBlack overflow-hidden bg-gazBlack">
+          <!-- Injected bespoke high-resolution artwork or automation diagram -->
+        </div>
+
+        <!-- Case Study Editorial Breakdown -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 pt-4 border-t-2 border-gazBlack">
+          <div class="md:col-span-2 space-y-4">
+            <h4 class="font-mono text-xs font-bold uppercase tracking-widest text-gazRed">01 // CREATIVE CONCEPT & OBJECTIVE</h4>
+            <p id="modal-concept" class="text-base sm:text-lg leading-relaxed font-medium text-gazBlack/90">
+              Project creative concept description.
+            </p>
+            <h4 class="font-mono text-xs font-bold uppercase tracking-widest text-gazRed pt-2">02 // EXECUTION & SYSTEM ARCHITECTURE</h4>
+            <p id="modal-process" class="text-sm sm:text-base leading-relaxed text-gazBlack/80">
+              Visual process description.
+            </p>
+          </div>
+
+          <!-- Technical Specs Sidebar -->
+          <div class="bg-gazGray/60 border-2 border-gazBlack p-5 space-y-4 font-mono text-xs">
+            <div>
+              <span class="block text-gazBlack/60 uppercase mb-1">DELIVERABLES</span>
+              <ul id="modal-deliverables" class="font-bold space-y-1 list-disc list-inside"></ul>
+            </div>
+            <div class="pt-3 border-t border-gazBlack/20">
+              <span class="block text-gazBlack/60 uppercase mb-2">PALETTE / STACK</span>
+              <div id="modal-colors" class="flex flex-wrap gap-2"></div>
+            </div>
+            <div class="pt-3 border-t border-gazBlack/20">
+              <a href="#contact" onclick="closeCaseStudyModal()" class="block w-full text-center bg-gazRed text-gazIvory font-bold uppercase py-3 border-2 border-gazBlack hover:bg-gazBlack transition-colors">
+                REQUEST SIMILAR PROJECT →
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ===================================================================== -->
+  <!-- APPLICATION LOGIC: GSAP 2D MOTION, AUTOMATION LAB, PORTFOLIO & I18N   -->
+  <!-- ===================================================================== -->
+  <script>
+    // Initialize Lucide Icons
+    lucide.createIcons();
+
+    // =========================================================================
+    // 1. BILINGUAL DICTIONARY (ENGLISH / ARABIC)
+    // =========================================================================
+    const translations = {
+      en: {
+        nav_role: "GRAPHIC DESIGN & AUTOMATIONS",
+        nav_works: "[01] SELECTED WORKS",
+        nav_about: "[02] STUDIO & AUTOMATION",
+        nav_lab: "[03] MOTION & FLOW LAB",
+        nav_services: "[04] DISCIPLINES",
+        nav_cta: "START PROJECT",
+        hero_badge: "GRAPHIC DESIGNER & AUTOMATION SPECIALIST — 2026",
+        hero_desc: "Independent Graphic Designer & Automation Specialist crafting high-impact brand identities, razor-sharp logos, high-CTR thumbnails, and intelligent workflow automations that scale creative & business output.",
+        hero_cta: "Explore My Work",
+        hero_sub_tag: "BRANDING • THUMBNAILS • N8N / MAKE",
+        works_sub: "CURATED DESIGN & AUTOMATION ARCHIVE",
+        works_title: "SELECTED WORKS",
+        filter_all: "ALL ARCHIVES (10)",
+        filter_identity: "BRAND IDENTITY",
+        filter_logo: "LOGO & MONOGRAM",
+        filter_social: "SOCIAL & YOUTUBE",
+        filter_apparel: "APPAREL & PRINT",
+        filter_automation: "⚡ AUTOMATIONS",
+        about_headline_1: "BOLD VISUALS.",
+        about_headline_2: "AUTOMATED SCALE.",
+        about_p1: "I am Omar Gaz (GATS / OMR_DZN) — a Graphic Designer and Workflow Automation Specialist bridging high-impact visual identity with intelligent operational systems.",
+        about_p2: "On the creative side, I craft unforgettable logos, corporate uniforms, and high-CTR YouTube thumbnails. On the technical side, I engineer automated workflows (n8n, Make, WhatsApp & CRM pipelines, and AI content engines) that eliminate repetitive manual work and accelerate client growth.",
+        pillar_design: "Brutalist typography, brand books, vector monograms, print & viral social media design.",
+        pillar_auto: "Automated lead capture, WhatsApp client onboarding, social publishing & AI workflow pipelines.",
+        stat_1: "DESIGN PROJECTS",
+        stat_2: "AUTOMATED FLOWS",
+        stat_3: "WORKFLOW EFFICIENCY",
+        lab_title: "MOTION & AUTOMATION LAB",
+        lab_desc: "Simulate live automated client-to-design workflows and choreograph kinetic Swiss typography animations in real time.",
+        services_title: "DESIGN & AUTOMATION SERVICES",
+        services_desc: "Comprehensive visual branding paired with smart operational automations for creators, startups, and enterprises.",
+        srv_1_title: "BRAND IDENTITY SYSTEMS",
+        srv_1_tag: "GUIDELINES • TYPOGRAPHY • COLOR ARCHITECTURE",
+        srv_2_title: "⚡ WORKFLOW & AI AUTOMATIONS",
+        srv_2_tag: "N8N • MAKE • WHATSAPP & CRM BOTS • CONTENT PIPELINES",
+        srv_3_title: "LOGO & MONOGRAM DESIGN",
+        srv_3_tag: "CUSTOM WORDMARKS • ESPORTS CRESTS • BADGES",
+        srv_4_title: "HIGH-CTR YOUTUBE & SOCIAL MEDIA",
+        srv_4_tag: "VIRAL THUMBNAILS • CAMPAIGN KEY VISUALS",
+        srv_5_title: "PACKAGING, PRINT & APPAREL",
+        srv_5_tag: "UNIFORMS • STATIONERY • QR BUSINESS CARDS",
+        contact_title: "LET'S WORK TOGETHER.",
+        contact_desc: "Ready to elevate your brand identity, launch a standout logo, or automate your business workflows? Reach out directly to Omar Gaz via WhatsApp, phone, or email.",
+        form_title: "PROJECT BRIEF",
+        form_name: "YOUR NAME / BRAND *",
+        form_contact: "YOUR EMAIL OR WHATSAPP *",
+        form_service: "DISCIPLINE NEEDED",
+        form_brief: "PROJECT DETAILS *",
+        form_submit: "DISPATCH BRIEF TO OMAR GAZ"
+      },
+      ar: {
+        nav_role: "تصميم جرافيك وأتمتة الأعمال",
+        nav_works: "[01] أبرز الأعمال",
+        nav_about: "[02] الاستوديو والأتمتة",
+        nav_lab: "[03] مختبر الحركة والأتمتة",
+        nav_services: "[04] التخصصات والخدمات",
+        nav_cta: "ابدأ مشروعك",
+        hero_badge: "مصمم جرافيك ومتخصص أتمتة الأعمال — 2026",
+        hero_desc: "مصمم جرافيك مستقل ومتخصص في بناء أنظمة الأتمتة الذكية — أجمع بين الهويات البصرية القوية، الشعارات الاحترافية، صور اليوتيوب عالية التفاعل، وأتمتة سير العمل لتسريع نمو المشاريع.",
+        hero_cta: "استكشف أعمالي",
+        hero_sub_tag: "هويات بصرية • يوتيوب • أتمتة N8N / MAKE",
+        works_sub: "أرشيف التصميم الجرافيكي وأنظمة الأتمتة",
+        works_title: "أحدث الأعمال",
+        filter_all: "جميع الأعمال (10)",
+        filter_identity: "هويات بصرية",
+        filter_logo: "شعارات ومونوجرام",
+        filter_social: "سوشيال ميديا ويوتيوب",
+        filter_apparel: "مطبوعات وملابس",
+        filter_automation: "⚡ أنظمة الأتمتة",
+        about_headline_1: "تصميم جريء.",
+        about_headline_2: "وأتمتة ذكية.",
+        about_p1: "أنا عمر جاز (OMAR GAZ / OMR_DZN) — مصمم جرافيك ومتخصص أتمتة الأعمال (Automations)، أدمج بين قوة الإخراج البصري والأنظمة الرقمية المؤتمتة.",
+        about_p2: "في جانب التصميم، أصنع شعارات أيقونية، زي موحد للشركات، وصور يوتيوب مصغرة تجذب المشاهدات. وفي جانب الأتمتة، أبني مسارات عمل ذكية (n8n، Make، بوتات واتساب وربط CRM) توفر ساعات من العمل اليدوي وتضاعف الإنتاجية.",
+        pillar_design: "هويات بصرية متكاملة، شعارات، مطبوعات، وتصميمات سوشيال ميديا احترافية.",
+        pillar_auto: "أتمتة استقبال العملاء عبر واتساب، إدارة المهام، ونشر المحتوى بالذكاء الاصطناعي.",
+        stat_1: "مشروع تصميم جرافيك",
+        stat_2: "نظام أتمتة متكامل",
+        stat_3: "كفاءة وسرعة تنفيذ",
+        lab_title: "مختبر الحركة والأتمتة",
+        lab_desc: "جرب محاكاة حية لمسارات أتمتة العملاء واختبر تحريك النصوص الجرافيكية مباشرة.",
+        services_title: "خدمات التصميم والأتمتة",
+        services_desc: "حلول بصرية متكاملة مدعومة بأنظمة أتمتة ذكية لصناع المحتوى والشركات الطموحة.",
+        srv_1_title: "تصميم الهويات البصرية الكاملة",
+        srv_1_tag: "دليل الهوية • الخطوط • أنظمة الألوان",
+        srv_2_title: "⚡ أتمتة الأعمال والذكاء الاصطناعي",
+        srv_2_tag: "N8N • MAKE • بوتات واتساب و CRM • أتمتة المحتوى",
+        srv_3_title: "تصميم الشعارات والمونوجرام",
+        srv_3_tag: "شعارات نصية • شارات رياضية • أيقونات",
+        srv_4_title: "تصميمات السوشيال ميديا واليوتيوب",
+        srv_4_tag: "صور مصغرة احترافية • حملات إعلانية",
+        srv_5_title: "المطبوعات، التغليف والزي الموحد",
+        srv_5_tag: "يونيفورم الشركات • كروت شخصية QR",
+        contact_title: "لنعمل معاً الآن.",
+        contact_desc: "هل تريد تطوير هويتك البصرية أو بناء نظام أتمتة ذكي يوفر وقتك ويضاعف مبيعاتك؟ تواصل مع عمر جاز مباشرة عبر واتساب، الهاتف، أو البريد الإلكتروني.",
+        form_title: "تفاصيل المشروع",
+        form_name: "الاسم أو اسم العلامة التجارية *",
+        form_contact: "رقم الواتساب أو البريد الإلكتروني *",
+        form_service: "الخدمة المطلوبة",
+        form_brief: "اشرح فكرة مشروعك أو نظام الأتمتة *",
+        form_submit: "إرسال الطلب إلى عمر جاز"
+      }
+    };
+
+    let currentLang = 'en';
+    const langToggleBtn = document.getElementById('lang-toggle');
+    const langLabel = document.getElementById('lang-label');
+
+    langToggleBtn.addEventListener('click', () => {
+      currentLang = currentLang === 'en' ? 'ar' : 'en';
+      document.documentElement.lang = currentLang;
+      document.documentElement.dir = currentLang === 'ar' ? 'rtl' : 'ltr';
+      langLabel.textContent = currentLang === 'en' ? 'AR / عربي' : 'EN / ENGLISH';
+
+      document.querySelectorAll('[data-i18n]').forEach(el => {
+        const key = el.getAttribute('data-i18n');
+        if (translations[currentLang][key]) {
+          el.textContent = translations[currentLang][key];
+        }
+      });
+    });
+
+    // =========================================================================
+    // 2. PORTFOLIO ARCHIVE DATA (GRAPHIC DESIGN + AUTOMATIONS)
+    // =========================================================================
+    const portfolioProjects = [
+      {
+        id: "omar-gaz-browser",
+        index: "01",
+        title: "OMAR GAZ — RETRO OS & LIGHTNING IDENTITY",
+        categoryKey: "identity",
+        categoryLabel: "BRAND IDENTITY & LOGO",
+        year: "2026",
+        spanClass: "md:col-span-7",
+        concept: "Inspired by early tactile OS windows and high-voltage pop-brutalism, this signature identity merges an iconic mint-green browser window (#6EE7B7) with bold extruded typography and a central lightning bolt split over a hypnotic orange-red (#F02B0B) optical wave backdrop.",
+        process: "Constructed using custom isometric extrusion paths, heavy 6px obsidian ink outlines, and four-point star sparkles to create an unmistakable personal brand mark.",
+        deliverables: ["Primary Brand Emblem", "Optical Wave Pattern", "Social Media Avatar System", "Motion Intro Stinger"],
+        colors: ["#F02B0B", "#6EE7B7", "#F8F5EC", "#171717"],
+        renderArtwork: () => `
+          <div class="w-full h-72 sm:h-96 gaz-wavy-bg flex items-center justify-center p-6 relative overflow-hidden select-none">
+            <div class="relative w-full max-w-md">
+              <div class="bg-[#FDE8E8] border-4 border-gazBlack rounded-t-xl px-4 py-2.5 flex items-center gap-2">
+                <span class="w-3.5 h-3.5 rounded-full bg-gazRed border-2 border-gazBlack"></span>
+                <span class="w-3.5 h-3.5 rounded-full bg-gazIvory border-2 border-gazBlack"></span>
+                <span class="w-3.5 h-3.5 rounded-full bg-gazMint border-2 border-gazBlack"></span>
+              </div>
+              <div class="bg-gazMint border-x-4 border-b-4 border-gazBlack rounded-b-xl h-36 sm:h-44 relative flex items-center justify-center">
+                <svg class="w-7 h-7 absolute -top-4 -left-3" viewBox="0 0 24 24"><path d="M12 0L15 9L24 12L15 15L12 24L9 15L0 12L9 9Z" fill="#F8F5EC" stroke="#171717" stroke-width="2"/></svg>
+                <svg class="w-7 h-7 absolute -bottom-4 left-1/2 -translate-x-1/2" viewBox="0 0 24 24"><path d="M12 0L15 9L24 12L15 15L12 24L9 15L0 12L9 9Z" fill="#F8F5EC" stroke="#171717" stroke-width="2"/></svg>
+                <svg class="w-7 h-7 absolute -bottom-2 -right-3" viewBox="0 0 24 24"><path d="M12 0L15 9L24 12L15 15L12 24L9 15L0 12L9 9Z" fill="#F8F5EC" stroke="#171717" stroke-width="2"/></svg>
+              </div>
+              <div class="absolute inset-0 flex items-center justify-center pointer-events-none">
+                <div class="flex items-center gap-1 sm:gap-2 transform -rotate-3">
+                  <span class="font-display text-5xl sm:text-7xl text-gazIvory tracking-tight" style="-webkit-text-stroke: 3px #171717; text-shadow: 5px 6px 0px #171717;">OMAR</span>
+                  <svg class="w-10 h-14 sm:w-14 sm:h-20 -mx-1 drop-shadow-[4px_5px_0px_#171717]" viewBox="0 0 100 120">
+                    <path d="M58 4L12 68H48L38 116L88 50H52L58 4Z" fill="#F8F5EC" stroke="#171717" stroke-width="8" stroke-linejoin="round"/>
+                  </svg>
+                  <span class="font-display text-5xl sm:text-7xl text-gazIvory tracking-tight" style="-webkit-text-stroke: 3px #171717; text-shadow: 5px 6px 0px #171717;">GAZ</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        `
+      },
+      {
+        id: "automation-whatsapp-crm",
+        index: "02",
+        title: "AUTOMATED WHATSAPP LEAD & DESIGN PIPELINE",
+        categoryKey: "automation",
+        categoryLabel: "⚡ WORKFLOW AUTOMATION",
+        year: "2026",
+        spanClass: "md:col-span-5",
+        concept: "End-to-end client onboarding and project automation system built for creative studios and agencies. Automatically captures incoming WhatsApp & form inquiries, qualifies project budgets via AI, creates dedicated Google Drive asset folders, and logs tasks into Notion/CRM in under 2 seconds.",
+        process: "Architected using webhook triggers, structured JSON parsing, automated WhatsApp Business API responses, and multi-step conditional routing—cutting administrative overhead by 85%.",
+        deliverables: ["n8n / Make Webhook Pipeline", "Automated WhatsApp Bot Flow", "CRM & Drive Auto-Provisioning", "Real-Time Slack/Email Alerts"],
+        colors: ["#171717", "#F02B0B", "#6EE7B7", "#F8F5EC"],
+        renderArtwork: () => `
+          <div class="w-full h-72 sm:h-96 bg-gazBlack p-6 flex flex-col justify-between relative overflow-hidden select-none">
+            <div class="flex items-center justify-between font-mono text-[10px] text-gazIvory/70 border-b border-gazIvory/20 pb-2">
+              <span class="text-gazRed font-bold">⚡ WORKFLOW // AUTO-ONBOARDING</span>
+              <span class="text-gazMint">● ACTIVE 24/7</span>
+            </div>
+            <!-- Connected Automation Nodes -->
+            <div class="my-auto space-y-3">
+              <div class="bg-gazIvory text-gazBlack border-2 border-gazRed p-3 flex items-center justify-between">
+                <div>
+                  <span class="font-mono text-[9px] font-bold text-gazRed block">STEP 01 // TRIGGER</span>
+                  <span class="font-display text-xl">WHATSAPP / WEBHOOK LEAD</span>
+                </div>
+                <span class="font-mono text-[10px] bg-gazBlack text-gazIvory px-2 py-1">JSON IN</span>
+              </div>
+              <div class="flex justify-center">
+                <svg class="w-6 h-6 text-gazRed" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M12 4v16m0 0l-5-5m5 5l5-5"/></svg>
+              </div>
+              <div class="bg-gazRed text-gazIvory border-2 border-gazIvory p-3 flex items-center justify-between">
+                <div>
+                  <span class="font-mono text-[9px] font-bold text-gazIvory/80 block">STEP 02 // AI + CRM SYNC</span>
+                  <span class="font-display text-xl">AUTO-QUOTE + DRIVE FOLDER</span>
+                </div>
+                <span class="font-mono text-[10px] bg-gazBlack text-gazMint px-2 py-1">1.4s</span>
+              </div>
+            </div>
+            <div class="font-mono text-[10px] text-gazIvory/60 flex justify-between pt-2 border-t border-gazIvory/20">
+              <span>ZERO MANUAL ENTRY</span>
+              <span>+85% TIME SAVED</span>
+            </div>
+          </div>
+        `
+      },
+      {
+        id: "omar-gaz-stamp",
+        index: "03",
+        title: "OMAR GAZ — BRUTALIST STACKED MONOGRAM STAMP",
+        categoryKey: "identity",
+        categoryLabel: "VISUAL IDENTITY SYSTEM",
+        year: "2026",
+        spanClass: "md:col-span-5",
+        concept: "The core editorial stamp of Omar Gaz. Built from two asymmetrical ivory perspective containers punched out of a vibrant orange-red (#F02B0B) field, accented with triple speed bars for kinetic authority.",
+        process: "Engineered with ultra-condensed custom letterforms where negative space carves the typography directly into the warm ivory paper stock.",
+        deliverables: ["Primary Brand Stamp", "Editorial Grid System", "Stationery & Print Seals"],
+        colors: ["#F02B0B", "#F8F5EC"],
+        renderArtwork: () => `
+          <div class="w-full h-72 sm:h-96 bg-gazRed flex items-center justify-center p-8 relative overflow-hidden select-none">
+            <div class="w-60 sm:w-72 space-y-2">
+              <div class="bg-gazIvory rounded-xl p-4 pb-3 shadow-md" style="clip-path: polygon(0 0, 100% 14%, 100% 100%, 0% 100%);">
+                <div class="space-y-1 mb-2 pt-1">
+                  <div class="h-1.5 w-12 bg-gazRed"></div>
+                  <div class="h-1.5 w-16 bg-gazRed"></div>
+                  <div class="h-1.5 w-9 bg-gazRed"></div>
+                </div>
+                <div class="font-display text-6xl sm:text-7xl text-gazRed leading-[0.85] tracking-tight text-center">OMAR</div>
+              </div>
+              <div class="bg-gazIvory rounded-xl p-4 pt-3 shadow-md" style="clip-path: polygon(0 0, 100% 0, 100% 86%, 0% 100%);">
+                <div class="font-display text-6xl sm:text-7xl text-gazRed leading-[0.85] tracking-tight text-center pb-2">GAZ</div>
+              </div>
+            </div>
+          </div>
+        `
+      },
+      {
+        id: "unx-esports",
+        index: "04",
+        title: "UNX — E-SPORTS & APPAREL CREST IDENTITY",
+        categoryKey: "logo",
+        categoryLabel: "LOGO & MONOGRAM",
+        year: "2025",
+        spanClass: "md:col-span-7",
+        concept: "A razor-sharp shield monogram crafted for competitive gaming collective UNX. Bold vertical monolith letterforms converge into a pointed crest crowned by a crimson victory star.",
+        process: "Constructed on a 45-degree geometric bevel grid over deep matte obsidian (#0D0D0D), balancing aggressive competitive energy with clean jersey embroidery readiness.",
+        deliverables: ["E-Sports Team Crest", "Jersey Chest Emblem", "Stream Overlay Package"],
+        colors: ["#0D0D0D", "#FFFFFF", "#FF1744"],
+        renderArtwork: () => `
+          <div class="w-full h-72 sm:h-96 bg-[#0B0B0B] flex flex-col items-center justify-center p-8 relative overflow-hidden select-none">
+            <div class="relative z-10 flex flex-col items-center">
+              <svg class="w-10 h-10 mb-3 text-[#FF1744]" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 2L14.9 8.6L22 9.3L16.6 14L18.2 21L12 17.3L5.8 21L7.4 14L2 9.3L9.1 8.6L12 2Z"/>
+              </svg>
+              <div class="w-52 sm:w-64 h-5 bg-white mb-2"></div>
+              <svg class="w-52 sm:w-64 h-40 sm:h-48" viewBox="0 0 260 200" fill="none">
+                <path d="M10 0H36V115L58 134V0H84V178L10 112V0Z" fill="white"/>
+                <path d="M98 0H124L142 65V0H168V165L133 198L98 165V0ZM124 85V155L133 164L142 155V125L124 85Z" fill="white"/>
+                <path d="M182 0H210L222 35L234 0H254V65L236 80L254 95V115L182 178V105L204 86L182 68V0Z" fill="white"/>
+              </svg>
+            </div>
+          </div>
+        `
+      },
+      {
+        id: "abu-adel-shipping",
+        index: "05",
+        title: "ABU ADEL SHIPPING (أبو عادل للشحن) — LOGISTICS & UNIFORMS",
+        categoryKey: "apparel",
+        categoryLabel: "BRAND IDENTITY & APPAREL",
+        year: "2026",
+        spanClass: "md:col-span-7",
+        concept: "Complete corporate identity and staff uniform system for Abu Adel Shipping ('سرعة | أمان | التزام' — Speed | Safety | Commitment). Dynamic aerodynamic speed-lines morph seamlessly into a stylized cargo truck cab.",
+        process: "Paired deep logistics navy (#0B3B66) with high-visibility safety orange (#F06418) on crisp white polo uniforms with chest, back, and sleeve branding placements.",
+        deliverables: ["Corporate Logo & Arabic Typography", "Polo Uniform Mockups", "Fleet Livery Guidelines"],
+        colors: ["#0B3B66", "#F06418", "#FFFFFF"],
+        renderArtwork: () => `
+          <div class="w-full h-72 sm:h-96 bg-[#D5B59C] flex items-center justify-center p-6 relative overflow-hidden select-none">
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 w-full max-w-2xl items-center">
+              <div class="bg-white border-2 border-gazBlack p-5 brutal-shadow flex flex-col items-center justify-center text-center">
+                <span class="font-mono text-[10px] uppercase tracking-widest text-gazBlack/50 mb-3">UNIFORM BACK PRINT // SPEC</span>
+                <svg class="w-44 h-20 mb-2" viewBox="0 0 220 90" fill="none">
+                  <path d="M10 15H125L135 28H25L10 15Z" fill="#0B3B66"/>
+                  <path d="M35 35H135V46H45L35 35Z" fill="#0B3B66"/>
+                  <path d="M25 53H135V64H35L25 53Z" fill="#F06418"/>
+                  <path d="M45 71H135V82H55L45 71Z" fill="#0B3B66"/>
+                  <path d="M142 22H182L204 54V78H192C192 70 185 64 177 64C169 64 162 70 162 78H142V22Z" fill="#0B3B66"/>
+                  <path d="M153 32H175L188 50H153V32Z" fill="white"/>
+                </svg>
+                <div class="font-display text-2xl text-[#0B3B66] font-bold">أبو عادل للشحن</div>
+                <div class="font-sans text-xs font-bold text-[#0B3B66]/80 mt-1">— سرعة | أمان | التزام —</div>
+              </div>
+              <div class="hidden sm:flex bg-[#0B3B66] text-white border-2 border-gazBlack p-5 brutal-shadow flex-col justify-between h-full">
+                <div class="font-mono text-[10px] uppercase tracking-widest text-[#F06418]">CORPORATE APPAREL SYSTEM</div>
+                <div class="my-4">
+                  <div class="text-xs font-mono opacity-75 mb-1">PLACEMENTS:</div>
+                  <div class="font-display text-2xl tracking-wide">CHEST • BACK • SLEEVES</div>
+                </div>
+                <div class="flex items-center gap-2">
+                  <span class="w-5 h-5 bg-[#0B3B66] border border-white"></span>
+                  <span class="w-5 h-5 bg-[#F06418] border border-white"></span>
+                  <span class="w-5 h-5 bg-white border border-black"></span>
+                  <span class="font-mono text-[10px] ml-auto">PRINT READY</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        `
+      },
+      {
+        id: "the-365",
+        index: "06",
+        title: "THE 365 — CONDENSED EDITORIAL MEDIA BADGE",
+        categoryKey: "logo",
+        categoryLabel: "LOGO & MONOGRAM",
+        year: "2025",
+        spanClass: "md:col-span-5",
+        concept: "A towering architectural badge designed for a 365-day sports and daily media platform. Ultra-elongated custom numerals '365' lock beneath a high-contrast header block.",
+        process: "Every vertical stem is aligned to a strict modular column grid, producing an authoritative emblem capable of scaling from mobile app icons to stadium banners.",
+        deliverables: ["Primary Crest Logo", "Monochrome Stencil", "Social Media Watermark"],
+        colors: ["#0A4A9E", "#171717", "#FFFFFF"],
+        renderArtwork: () => `
+          <div class="w-full h-72 sm:h-96 bg-[#0A4A9E] flex items-center justify-center p-8 select-none">
+            <div class="bg-gazBlack p-3.5 rounded-bl-3xl shadow-2xl w-48 sm:w-56">
+              <div class="bg-white text-gazBlack font-display text-3xl sm:text-4xl text-center py-1 tracking-widest mb-2.5 leading-none">
+                THE
+              </div>
+              <div class="grid grid-cols-3 gap-2 text-white font-display text-7xl sm:text-8xl leading-[0.82] text-center pt-1">
+                <span>3</span>
+                <span>6</span>
+                <span>5</span>
+              </div>
+            </div>
+          </div>
+        `
+      },
+      {
+        id: "automation-content-engine",
+        index: "07",
+        title: "AI CONTENT & SOCIAL PUBLISHING AUTOMATION",
+        categoryKey: "automation",
+        categoryLabel: "⚡ WORKFLOW AUTOMATION",
+        year: "2026",
+        spanClass: "md:col-span-6",
+        concept: "Automated multi-channel content operations pipeline built for YouTube creators and social media brands. Automatically detects new video uploads, generates SEO summaries, prepares branded graphic templates, and schedules cross-platform posts.",
+        process: "Connects YouTube Data triggers, LLM copywriting nodes, automated asset templating, and multi-platform scheduling queues with real-time analytics reporting.",
+        deliverables: ["Automated Content Calendar", "YouTube-to-Social Repurposing Bot", "Analytics Reporting Dashboard"],
+        colors: ["#F02B0B", "#171717", "#E8FF00", "#F8F5EC"],
+        renderArtwork: () => `
+          <div class="w-full h-72 sm:h-96 bg-gazIvory p-6 flex flex-col justify-between relative overflow-hidden select-none">
+            <div class="flex items-center justify-between font-mono text-[10px] font-bold border-b-2 border-gazBlack pb-2">
+              <span class="text-gazRed">⚡ PIPELINE // CONTENT_OPS_V2</span>
+              <span class="bg-gazBlack text-gazIvory px-2 py-0.5">AUTO-SYNC</span>
+            </div>
+            <div class="grid grid-cols-3 gap-2.5 my-auto items-center text-center">
+              <div class="bg-gazBlack text-gazIvory p-3 border-2 border-gazBlack">
+                <div class="font-mono text-[9px] text-gazRed mb-1">SOURCE</div>
+                <div class="font-display text-lg leading-tight">NEW VIDEO UPLOAD</div>
+              </div>
+              <div class="bg-gazRed text-gazIvory p-3 border-2 border-gazBlack brutal-shadow">
+                <div class="font-mono text-[9px] text-gazIvory/80 mb-1">AI ENGINE</div>
+                <div class="font-display text-lg leading-tight">COPY + ASSET KIT</div>
+              </div>
+              <div class="bg-gazYellow text-gazBlack p-3 border-2 border-gazBlack">
+                <div class="font-mono text-[9px] font-bold mb-1">PUBLISH</div>
+                <div class="font-display text-lg leading-tight">IG / X / TELEGRAM</div>
+              </div>
+            </div>
+            <div class="font-mono text-[10px] font-bold text-gazBlack/70 flex justify-between pt-2 border-t-2 border-gazBlack">
+              <span>N8N + MAKE + API</span>
+              <span>100% HANDS-FREE</span>
+            </div>
+          </div>
+        `
+      },
+      {
+        id: "youtube-thumbnails",
+        index: "08",
+        title: "HIGH-CTR YOUTUBE THUMBNAIL & CONTENT SERIES",
+        categoryKey: "social",
+        categoryLabel: "SOCIAL & YOUTUBE DESIGN",
+        year: "2026",
+        spanClass: "md:col-span-6",
+        concept: "High-impact YouTube thumbnail compositions engineered to maximize Click-Through Rate (CTR) across tech, documentary, and educational channels — featuring dramatic rim lighting, expressive subject compositing, and bold Arabic & English display typography.",
+        process: "Combines multi-layer color grading, 3D extruded Arabic titles ('الجدار الجليدي', 'بدائل اقتصادية', 'المراجعة النهائية'), and clear visual focal hierarchy tested for mobile feeds.",
+        deliverables: ["Documentary Thumbnails", "Tech Review Key Visuals", "Educational Series Branding"],
+        colors: ["#F02B0B", "#E8FF00", "#7C3AED", "#0EA5E9"],
+        renderArtwork: () => `
+          <div class="w-full h-72 sm:h-96 bg-gazBlack p-4 sm:p-5 grid grid-cols-2 gap-3 select-none">
+            <div class="bg-gradient-to-br from-sky-500 to-blue-900 border border-gazIvory/30 p-3 flex flex-col justify-between relative overflow-hidden">
+              <span class="font-mono text-[9px] bg-gazRed text-white px-1.5 py-0.5 w-fit font-bold">CTR +14.8%</span>
+              <div class="text-right mt-auto">
+                <div class="font-display text-xl sm:text-2xl text-white drop-shadow-[2px_2px_0px_#000]">الجدار</div>
+                <div class="font-display text-xl sm:text-2xl text-gazYellow drop-shadow-[2px_2px_0px_#000]">الجليدي</div>
+              </div>
+            </div>
+            <div class="bg-gradient-to-br from-purple-700 to-indigo-950 border border-gazIvory/30 p-3 flex flex-col justify-between relative overflow-hidden">
+              <span class="font-mono text-[9px] bg-gazBlack text-gazIvory px-1.5 py-0.5 w-fit font-bold">TECH SERIES</span>
+              <div class="text-right mt-auto">
+                <div class="font-display text-xl sm:text-2xl text-pink-400 drop-shadow-[2px_2px_0px_#000]">بدائل</div>
+                <div class="font-display text-xl sm:text-2xl text-pink-400 drop-shadow-[2px_2px_0px_#000]">اقتصادية</div>
+              </div>
+            </div>
+            <div class="bg-gradient-to-r from-emerald-900 via-yellow-600 to-amber-500 border border-gazIvory/30 p-3 flex flex-col justify-between">
+              <span class="font-mono text-[9px] bg-gazBlack text-white px-1.5 py-0.5 w-fit">ENTERTAINMENT</span>
+              <div class="font-display text-xl sm:text-2xl text-white leading-none drop-shadow-[2px_2px_0px_#000]">
+                BEST MOVIES <span class="text-gazYellow block">OF 2024</span>
+              </div>
+            </div>
+            <div class="bg-gradient-to-br from-amber-800 to-stone-900 border border-gazIvory/30 p-3 flex flex-col justify-between">
+              <span class="font-mono text-[9px] bg-gazRed text-white px-1.5 py-0.5 w-fit">EDUCATION</span>
+              <div class="text-right mt-auto">
+                <div class="font-display text-xl sm:text-2xl text-white drop-shadow-[2px_2px_0px_#000]">المراجعة</div>
+                <div class="font-display text-xl sm:text-2xl text-amber-300 drop-shadow-[2px_2px_0px_#000]">النهائية</div>
+              </div>
+            </div>
+          </div>
+        `
+      },
+      {
+        id: "pk-monogram",
+        index: "09",
+        title: "PK — HIGH-VOLTAGE KINETIC MONOGRAM",
+        categoryKey: "logo",
+        categoryLabel: "LOGO & MONOGRAM",
+        year: "2025",
+        spanClass: "md:col-span-5",
+        concept: "Razor-angled geometric monogram combining 'P' and 'K' into an aggressive forward-leaning silhouette set against electrifying acid yellow (#E8FF00).",
+        process: "Cut with parallel 32-degree diagonal shears to evoke extreme velocity, precision engineering, and modern streetwear sensibility.",
+        deliverables: ["Vector Monogram", "Acid Yellow Brand Kit", "Merchandise Stamp"],
+        colors: ["#E8FF00", "#171717"],
+        renderArtwork: () => `
+          <div class="w-full h-72 sm:h-96 bg-gazYellow flex items-center justify-center p-8 relative select-none">
+            <svg class="w-52 h-52 sm:w-60 sm:h-60" viewBox="0 0 220 220" fill="none">
+              <path d="M95 30H185L135 95H105L112 86H75L42 130L50 100H32L95 30ZM118 52L102 72H128L144 52H118Z" fill="#171717"/>
+              <path d="M102 102H128L108 128L152 102H182L126 138L148 188H120L104 152L58 190L102 102Z" fill="#171717"/>
+            </svg>
+            <div class="absolute bottom-4 left-5 font-mono text-[10px] font-bold text-gazBlack/60 uppercase">
+              OMAR GAZ // MONOGRAM ARCHIVE
+            </div>
+          </div>
+        `
+      },
+      {
+        id: "omr-dzn-card",
+        index: "10",
+        title: "OMR_DZN — METALLIC HEXAGON & QR BUSINESS CARD",
+        categoryKey: "apparel",
+        categoryLabel: "PRINT & VISUAL IDENTITY",
+        year: "2026",
+        spanClass: "md:col-span-7",
+        concept: "Tactile matte-black executive identity card featuring a beveled metallic hexagon emblem, orange geometric framing, and instant-scan WhatsApp & Instagram (@OMR_DZN) QR codes.",
+        process: "Designed with micro-hexagonal carbon texture, spot-UV metallic silver gradients, and high-contrast orange-red vector circuit accents.",
+        deliverables: ["Double-Sided Business Card", "Beveled Hexagon Mark", "QR Contact Integration"],
+        colors: ["#171717", "#F02B0B", "#E5E7EB"],
+        renderArtwork: () => `
+          <div class="w-full h-72 sm:h-96 bg-[#141414] flex items-center justify-center p-6 relative overflow-hidden select-none">
+            <div class="w-full max-w-lg bg-[#1C1C1C] border-2 border-gazRed/80 p-6 shadow-2xl relative">
+              <div class="w-12 h-1 bg-gazRed absolute top-0 left-0"></div>
+              <div class="w-12 h-1 bg-gazRed absolute bottom-0 right-0"></div>
+              <div class="flex flex-col sm:flex-row items-center gap-6">
+                <div class="w-24 h-24 shrink-0 flex items-center justify-center relative">
+                  <svg class="w-24 h-24" viewBox="0 0 100 100" fill="none">
+                    <polygon points="50,5 90,27 90,73 50,95 10,73 10,27" stroke="#F02B0B" stroke-width="3" fill="#171717"/>
+                    <polygon points="50,18 78,34 78,66 50,82 22,66 22,34" stroke="#F8F5EC" stroke-width="6" fill="none"/>
+                  </svg>
+                </div>
+                <div class="text-center sm:text-left">
+                  <div class="font-display text-3xl sm:text-4xl text-white tracking-wider">
+                    OMR<span class="text-gazRed">_</span>DZN
+                  </div>
+                  <div class="font-mono text-[11px] tracking-[0.25em] text-gazIvory/70 uppercase mt-1 pb-3 border-b border-gazRed/50">
+                    GRAPHIC DESIGNER & AUTOMATIONS
+                  </div>
+                  <div class="mt-3 flex flex-wrap justify-center sm:justify-start gap-3 font-mono text-[11px] text-gazIvory">
+                    <span class="bg-gazBlack px-2.5 py-1 border border-gazRed/60">WA: 01154076421</span>
+                    <span class="bg-gazBlack px-2.5 py-1 border border-gazIvory/30">IG: @OMR_DZN</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        `
+      }
+    ];
+
+    const projectsGrid = document.getElementById('projects-grid');
+
+    function renderPortfolio(filter = 'all') {
+      const filtered = filter === 'all'
+        ? portfolioProjects
+        : portfolioProjects.filter(p => p.categoryKey === filter);
+
+      projectsGrid.innerHTML = filtered.map(project => `
+        <article class="${project.spanClass} portfolio-card group bg-gazIvory border-2 border-gazBlack brutal-shadow flex flex-col justify-between cursor-pointer overflow-hidden" onclick="openCaseStudyModal('${project.id}')">
+          <div>
+            <!-- Top Editorial Meta Bar -->
+            <div class="px-4 py-3 border-b-2 border-gazBlack flex items-center justify-between font-mono text-xs font-bold uppercase bg-gazIvory group-hover:bg-gazBlack group-hover:text-gazIvory transition-colors">
+              <div class="flex items-center gap-2">
+                <span class="text-gazRed">[${project.index}]</span>
+                <span>${project.categoryLabel}</span>
+              </div>
+              <span>${project.year}</span>
+            </div>
+
+            <!-- Artwork Stage -->
+            <div class="overflow-hidden border-b-2 border-gazBlack">
+              <div class="transform group-hover:scale-[1.03] transition-transform duration-500 ease-out">
+                ${project.renderArtwork()}
+              </div>
+            </div>
+          </div>
+
+          <!-- Bottom Title & Action Bar -->
+          <div class="p-5 sm:p-6 flex items-end justify-between gap-4 bg-gazIvory">
+            <div>
+              <h3 class="font-condensed-giant text-2xl sm:text-3xl lg:text-4xl text-gazBlack group-hover:text-gazRed transition-colors">
+                ${project.title}
+              </h3>
+              <p class="font-sans text-xs sm:text-sm text-gazBlack/75 mt-2 line-clamp-2">
+                ${project.concept}
+              </p>
+            </div>
+            <span class="w-11 h-11 shrink-0 border-2 border-gazBlack bg-gazIvory group-hover:bg-gazRed group-hover:text-gazIvory flex items-center justify-center transition-colors">
+              <i data-lucide="arrow-up-right" class="w-5 h-5"></i>
+            </span>
+          </div>
+        </article>
+      `).join('');
+
+      lucide.createIcons();
+
+      if (typeof gsap !== 'undefined') {
+        gsap.from('.portfolio-card', {
+          y: 28,
+          opacity: 0,
+          duration: 0.55,
+          stagger: 0.08,
+          ease: 'power3.out'
+        });
+      }
+    }
+
+    // Initial Portfolio Render
+    renderPortfolio('all');
+
+    // Filter Buttons Logic
+    document.querySelectorAll('.filter-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.filter-btn').forEach(b => {
+          b.classList.remove('active', 'bg-gazBlack', 'text-gazIvory');
+          b.classList.add('bg-gazIvory', 'text-gazBlack');
+        });
+        btn.classList.add('active', 'bg-gazBlack', 'text-gazIvory');
+        btn.classList.remove('bg-gazIvory', 'text-gazBlack');
+        renderPortfolio(btn.getAttribute('data-filter'));
+      });
+    });
+
+    // =========================================================================
+    // 3. CASE STUDY MODAL INTERACTIONS
+    // =========================================================================
+    const modal = document.getElementById('case-study-modal');
+    const closeModalBtn = document.getElementById('close-modal-btn');
+
+    window.openCaseStudyModal = function(projectId) {
+      const project = portfolioProjects.find(p => p.id === projectId);
+      if (!project) return;
+
+      document.getElementById('modal-index').textContent = `ARCHIVE ${project.index}`;
+      document.getElementById('modal-category').textContent = project.categoryLabel;
+      document.getElementById('modal-project-title').textContent = project.title;
+      document.getElementById('modal-subtitle').textContent = `OMAR GAZ (GATS) // ${project.year} EDITION`;
+      document.getElementById('modal-artwork-stage').innerHTML = project.renderArtwork();
+      document.getElementById('modal-concept').textContent = project.concept;
+      document.getElementById('modal-process').textContent = project.process;
+
+      document.getElementById('modal-deliverables').innerHTML = project.deliverables
+        .map(d => `<li>${d}</li>`).join('');
+
+      document.getElementById('modal-colors').innerHTML = project.colors
+        .map(hex => `
+          <div class="flex items-center gap-1.5 bg-gazIvory border border-gazBlack px-2 py-1">
+            <span class="w-3.5 h-3.5 border border-gazBlack inline-block" style="background:${hex}"></span>
+            <span class="text-[10px] font-bold">${hex}</span>
+          </div>
+        `).join('');
+
+      modal.classList.remove('hidden');
+      document.body.style.overflow = 'hidden';
+      lucide.createIcons();
+    };
+
+    window.closeCaseStudyModal = function() {
+      modal.classList.add('hidden');
+      document.body.style.overflow = '';
+    };
+
+    closeModalBtn.addEventListener('click', closeCaseStudyModal);
+    modal.addEventListener('click', (e) => {
+      if (e.target === modal) closeCaseStudyModal();
+    });
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && !modal.classList.contains('hidden')) {
+        closeCaseStudyModal();
+      }
+    });
+
+    // =========================================================================
+    // 4. INTERACTIVE AUTOMATION WORKFLOW SIMULATOR & KINETIC POSTER LAB
+    // =========================================================================
+    const pipelines = {
+      client: {
+        n1Title: "WHATSAPP BRIEF",
+        n1Desc: "Client submits inquiry via 01154076421",
+        n2Title: "PARSE & SCOPE",
+        n2Desc: "AI extracts deliverables, timeline & budget",
+        n3Title: "CRM + FOLDER READY",
+        n3Desc: "Creates Notion task, Drive assets & sends quote",
+        logs: [
+          "> [00.2s] Incoming WhatsApp lead captured from +20 10X XXX XXXX...",
+          "> [00.8s] AI Agent classified request: 'Brand Identity + Automation'...",
+          "> [01.4s] Google Drive folder provisioned, CRM updated & instant reply sent!"
+        ]
+      },
+      social: {
+        n1Title: "VIDEO PUBLISHED",
+        n1Desc: "New YouTube video & thumbnail uploaded",
+        n2Title: "AI REPURPOSE",
+        n2Desc: "Generates Arabic/English hooks & resized graphics",
+        n3Title: "OMNI-CHANNEL POST",
+        n3Desc: "Auto-schedules to Instagram, X & Telegram",
+        logs: [
+          "> [00.3s] New YouTube upload detected via webhook trigger...",
+          "> [01.1s] Generated bilingual social captions & resized promo cards...",
+          "> [01.8s] Scheduled across Instagram, X & Telegram channels!"
+        ]
+      }
+    };
+
+    let activePipeline = 'client';
+    let isPipelineRunning = false;
+
+    document.querySelectorAll('.pipeline-tab').forEach(tab => {
+      tab.addEventListener('click', () => {
+        document.querySelectorAll('.pipeline-tab').forEach(t => {
+          t.classList.remove('bg-gazRed', 'border-gazIvory');
+          t.classList.add('bg-gazBlack', 'border-gazIvory/40');
+        });
+        tab.classList.add('bg-gazRed', 'border-gazIvory');
+        tab.classList.remove('bg-gazBlack', 'border-gazIvory/40');
+
+        activePipeline = tab.getAttribute('data-pipeline');
+        const data = pipelines[activePipeline];
+        document.getElementById('node-1-title').textContent = data.n1Title;
+        document.getElementById('node-1-desc').textContent = data.n1Desc;
+        document.getElementById('node-2-title').textContent = data.n2Title;
+        document.getElementById('node-2-desc').textContent = data.n2Desc;
+        document.getElementById('node-3-title').textContent = data.n3Title;
+        document.getElementById('node-3-desc').textContent = data.n3Desc;
+        document.getElementById('automation-log-text').textContent = '> Pipeline switched. Ready to execute pulse...';
+      });
+    });
+
+    document.getElementById('run-automation-btn').addEventListener('click', () => {
+      if (isPipelineRunning) return;
+      isPipelineRunning = true;
+
+      const statusBadge = document.getElementById('pipeline-status-badge');
+      const logText = document.getElementById('automation-log-text');
+      const nodes = [
+        document.getElementById('flow-node-1'),
+        document.getElementById('flow-node-2'),
+        document.getElementById('flow-node-3')
+      ];
+      const currentData = pipelines[activePipeline];
+
+      statusBadge.textContent = 'RUNNING...';
+      statusBadge.classList.remove('bg-gazRed', 'bg-gazMint', 'text-gazBlack');
+      statusBadge.classList.add('bg-gazYellow', 'text-gazBlack');
+
+      nodes.forEach((node, idx) => {
+        setTimeout(() => {
+          nodes.forEach(n => n.classList.remove('bg-gazRed', 'text-gazIvory', 'scale-105'));
+          node.classList.add('bg-gazRed', 'text-gazIvory', 'scale-105');
+          logText.textContent = currentData.logs[idx];
+
+          if (typeof gsap !== 'undefined') {
+            gsap.fromTo(node, { y: -6 }, { y: 0, duration: 0.35, ease: 'back.out(2)' });
+          }
+
+          if (idx === 2) {
+            setTimeout(() => {
+              nodes.forEach(n => n.classList.remove('bg-gazRed', 'text-gazIvory', 'scale-105'));
+              statusBadge.textContent = 'COMPLETED ✓';
+              statusBadge.classList.remove('bg-gazYellow');
+              statusBadge.classList.add('bg-gazMint', 'text-gazBlack');
+              isPipelineRunning = false;
+            }, 900);
+          }
+        }, idx * 750);
+      });
+    });
+
+    // Kinetic Poster Animator Controls
+    const posterInput = document.getElementById('poster-input');
+    const posterLiveText = document.getElementById('poster-live-text');
+    const posterCardBox = document.getElementById('poster-card-box');
+
+    posterInput.addEventListener('input', (e) => {
+      posterLiveText.textContent = e.target.value.trim() || 'OMAR GAZ';
+    });
+
+    document.getElementById('motion-slam-btn').addEventListener('click', () => {
+      if (typeof gsap !== 'undefined') {
+        gsap.fromTo(posterCardBox,
+          { scale: 1.35, rotation: -6, opacity: 0.4 },
+          { scale: 1, rotation: -1, opacity: 1, duration: 0.55, ease: 'elastic.out(1, 0.5)' }
+        );
+      }
+    });
+
+    document.getElementById('motion-skew-btn').addEventListener('click', () => {
+      if (typeof gsap !== 'undefined') {
+        gsap.to(posterLiveText, {
+          skewX: -14,
+          duration: 0.25,
+          yoyo: true,
+          repeat: 3,
+          ease: 'power2.inOut',
+          onComplete: () => gsap.set(posterLiveText, { skewX: 0 })
+        });
+      }
+    });
+
+    document.getElementById('poster-preset-btn').addEventListener('click', () => {
+      const arabicSamples = ['عمر جاز ⚡', 'تصميم وأتمتة', 'هوية بصرية'];
+      const pick = arabicSamples[Math.floor(Math.random() * arabicSamples.length)];
+      posterInput.value = pick;
+      posterLiveText.textContent = pick;
+      if (typeof gsap !== 'undefined') {
+        gsap.fromTo(posterLiveText, { y: 20, opacity: 0 }, { y: 0, opacity: 1, duration: 0.4, ease: 'power3.out' });
+      }
+    });
+
+    // =========================================================================
+    // 5. CLIPBOARD TOAST, MOBILE MENU & CONTACT FORM
+    // =========================================================================
+    window.copyToClipboard = function(text, message) {
+      if (navigator.clipboard) {
+        navigator.clipboard.writeText(text);
+      }
+      const toast = document.getElementById('toast-notification');
+      const toastText = document.getElementById('toast-text');
+      toastText.textContent = message;
+      toast.classList.remove('translate-y-24', 'opacity-0');
+      setTimeout(() => {
+        toast.classList.add('translate-y-24', 'opacity-0');
+      }, 3000);
+    };
+
+    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    mobileMenuBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+    document.querySelectorAll('.mobile-nav-link').forEach(link => {
+      link.addEventListener('click', () => mobileMenu.classList.add('hidden'));
+    });
+
+    const contactForm = document.getElementById('contact-form');
+    const formSuccess = document.getElementById('form-success');
+    const waDirectLaunch = document.getElementById('wa-direct-launch');
+    const resetFormBtn = document.getElementById('reset-form-btn');
+
+    contactForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const name = document.getElementById('client-name').value.trim();
+      const contact = document.getElementById('client-contact').value.trim();
+      const service = document.getElementById('client-service').value;
+      const brief = document.getElementById('client-brief').value.trim();
+
+      const waMessage = encodeURIComponent(
+        `Hello Omar Gaz (GATS),\nName/Brand: ${name}\nContact: ${contact}\nDiscipline: ${service}\nBrief: ${brief}`
+      );
+      waDirectLaunch.href = `https://wa.me/201154076421?text=${waMessage}`;
+
+      contactForm.classList.add('hidden');
+      formSuccess.classList.remove('hidden');
+      copyToClipboard('01154076421', 'Brief ready! Click Open in WhatsApp to send directly.');
+    });
+
+    resetFormBtn.addEventListener('click', () => {
+      contactForm.reset();
+      formSuccess.classList.add('hidden');
+      contactForm.classList.remove('hidden');
+    });
+
+    // =========================================================================
+    // 6. GSAP & SCROLLTRIGGER CHOREOGRAPHY (NO 3D / PURE 2D MOTION)
+    // =========================================================================
+    window.onload = function() {
+      if (typeof gsap === 'undefined') return;
+      gsap.registerPlugin(ScrollTrigger);
+
+      const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      if (prefersReducedMotion) return;
+
+      // Hero Staggered Entrance Choreography
+      const heroTl = gsap.timeline({ defaults: { ease: 'power4.out' } });
+      heroTl
+        .from('.hero-word', {
+          yPercent: 110,
+          duration: 0.95,
+          stagger: 0.14
+        })
+        .from('.hero-bolt', {
+          scale: 0,
+          rotation: -35,
+          duration: 0.65,
+          ease: 'back.out(1.7)'
+        }, '-=0.5')
+        .from('.hero-stagger', {
+          y: 24,
+          opacity: 0,
+          duration: 0.65,
+          stagger: 0.1
+        }, '-=0.6');
+
+      // Subtle Continuous Float on Hero Bolt Emblem
+      gsap.to('.hero-bolt', {
+        y: -8,
+        rotation: 2,
+        duration: 2.2,
+        repeat: -1,
+        yoyo: true,
+        ease: 'sine.inOut'
+      });
+
+      // Scroll-Triggered Section Reveals
+      gsap.utils.toArray('.reveal-up').forEach(section => {
+        gsap.from(section, {
+          y: 45,
+          opacity: 0,
+          duration: 0.8,
+          ease: 'power3.out',
+          scrollTrigger: {
+            trigger: section,
+            start: 'top 84%',
+            once: true
+          }
+        });
+      });
+
+      // Staggered Service Rows Entrance
+      gsap.from('.service-row', {
+        x: -24,
+        opacity: 0,
+        duration: 0.6,
+        stagger: 0.1,
+        ease: 'power2.out',
+        scrollTrigger: {
+          trigger: '#services-list',
+          start: 'top 85%',
+          once: true
+        }
+      });
+    };
+  </script>
+</body>
+</html>
